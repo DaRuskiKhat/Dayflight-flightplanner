@@ -73,12 +73,15 @@ Run calculation checks with:
 There are no server dependencies, credentials, Git metadata or hosting account bindings in this ZIP.
 
 DATA / LICENSES
-Airport data: https://github.com/mwgg/Airports
+Dayflight code: MIT; see source/LICENSE.
+Airport data: https://github.com/mwgg/Airports, MIT, (c) 2014 mwgg; see source/dist/vendor/airports-LICENSE.txt.
 Natural Earth map data: public domain.
 SunCalc 2.1.1: MIT; see source/dist/vendor/suncalc-LICENSE.txt.
 Time-zone lookup: @photostructure/tz-lookup 11.7.0, CC0; see source/dist/vendor/tz-lookup-LICENSE.txt.
 
 The route and celestial calculations are estimates for travel visualization.
+For flight simulation and travel curiosity only; not for real-world navigation.
+Not affiliated with or endorsed by Navigraph or SimBrief.
 '''
 (out/'START-HERE.txt').write_text(readme,encoding='utf-8')
 archive=out/'Dayflight-local.zip'
@@ -89,6 +92,6 @@ with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
         if file.is_file():z.write(file,'source/dist/'+file.relative_to(dist).as_posix())
     for test_file in sorted((root/'tests').glob('*')):
         if test_file.is_file():z.write(test_file,'source/tests/'+test_file.name)
-    for name in ['README.md','PROJECT-NOTES.md','check.cjs','check-simbrief.cjs','export-offline.py']:
+    for name in ['README.md','PROJECT-NOTES.md','LICENSE','check.cjs','check-simbrief.cjs','export-offline.py']:
         z.write(root/name,'source/'+name)
 print(json.dumps({'html':str(out/'Dayflight-offline.html'),'zip':str(archive),'html_bytes':(out/'Dayflight-offline.html').stat().st_size,'zip_bytes':archive.stat().st_size}))

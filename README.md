@@ -40,7 +40,11 @@ Departure time uses a single field with a combined, bounded hour/minute dropdown
 Solar model: https://gml.noaa.gov/grad/solcalc/solareqns.PDF
 
 Map: Natural Earth public-domain land geometry (110m).
-Airport data: https://github.com/mwgg/Airports (snapshot downloaded 2026-11-04). Airport data is not a current navigation database.
+Airport data: https://github.com/mwgg/Airports (snapshot downloaded 2026-11-04; MIT, © 2014 mwgg, see `dist/vendor/airports-LICENSE.txt`). Airport data is not a current navigation database.
+
+## Licence and disclaimer
+
+Dayflight's code is MIT-licensed (see `LICENSE`); bundled data and libraries keep their own licences, listed there. Dayflight is for flight simulation and travel curiosity only, not real-world navigation or flight planning. SimBrief imports use Navigraph's public OFP fetch endpoint for the viewer's own flight; SimBrief and Navigraph data must only be used for flight simulation. Dayflight is not affiliated with or endorsed by Navigraph or SimBrief. Inspired by Daylight Dispatch.
 
 Model uses constant-speed great-circle travel, a sea-level horizon, and 30-second sampling. It does not model terrain, weather, cruise altitude, actual airways, winds, stops or taxi time. Ground speed is not true airspeed. Custom map point time zones are suggested by the nearest airport and should be verified.
 
