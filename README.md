@@ -2,6 +2,12 @@
 
 A buildless flight daylight planner. Live at **https://dayflight-flightplanner.pages.dev/**. Serve `dist` with any static HTTP server.
 
+## Gate-to-gate timing
+
+When taxi times are known, the timeline runs from off-block (push-back) to in-block (gate arrival): taxi-out at the origin, the airborne route, then taxi-in at the destination. SimBrief imports use the OFP taxi-out/taxi-in times (or the off/on-block gaps), so the planner's time field is the off-block time and takeoff = off-block + taxi-out. Manual plans have optional Taxi out / Taxi in fields (minutes, default 0 = takeoff-to-landing as before); with taxi times, departure time is gate push-back and flight time stays airborne time. The origin card shows off-block and takeoff, the destination card in-block and landing, the timeline bar has takeoff/landing ticks and chips, and the vertical profile is labelled Off-block / In-block. While taxiing, the telemetry tag reads Taxiing to runway / to gate. Older saved plans without taxi times behave as before.
+
+Route colours: the unflown SimBrief route is gold dashed; the direct great-circle (manual route, and the SimBrief direct overlay) is pale dashed. The wind line in the telemetry tag has an arrow pointing the way the wind blows.
+
 ## Hosting
 
 There is no build step and no server code: publish the `dist` folder as-is. SimBrief is called directly from the viewer's browser, so live import works on any static host.

@@ -313,3 +313,10 @@ main{max-width:2040px;padding-left:3%;padding-right:3%}
 
 .site-legal{margin:-6px 0 34px;font-size:11px;line-height:1.6;color:#7d8f80;max-width:1100px}
 .site-legal a{color:#4f6f5c;text-decoration:underline;text-underline-offset:2px}
+
+.phase-mark{position:absolute;top:13px;width:2px;height:18px;margin-left:-1px;background:#fffef9;box-shadow:0 0 0 1px #244b4566;border-radius:1px;pointer-events:none;z-index:1}
+.phase-mark[hidden]{display:none}
+.event-phase{background:#eef2e8;border-color:#cfd9c8;color:#244b45;font-weight:600}
+.taxi-row{display:grid;grid-template-columns:auto 1fr auto 1fr;align-items:center;gap:8px}
+.taxi-row span{font-size:12px;color:#6d8278}
+.direct-swatch{border-top-color:#d5e0c5!important}

@@ -6,7 +6,7 @@ vm.runInContext(fs.readFileSync('dist/vendor/tz-lookup.js','utf8'),context);
 vm.runInContext(script,context);
 const run=code=>vm.runInContext(code,context);
 assert.equal(run("arrivalDayDelta(Date.parse('2026-11-05T05:00:00Z'),23.5*3600000,'Australia/Sydney','Europe/London')"),1);
-assert.equal(run('horizonDip(0)'),0);assert.equal(run('horizonDip(null)'),0);assert.ok(Math.abs(run('horizonDip(36000)')-3.07)<.05,'horizon dip at 36,000 ft ≈ 3.07°');assert.ok(Math.abs(run('horizonDip(10000)')-1.62)<.05,'horizon dip at 10,000 ft ≈ 1.62°');
+run("var gg={ms:600000,taxiOutMs:60000,taxiInMs:120000}");assert.equal(run('airFractionOf(gg,0)'),0);assert.equal(run('airFractionOf(gg,0.05)'),0);assert.equal(run('airFractionOf(gg,0.1)'),0);assert.equal(run('airFractionOf(gg,0.5)'),(300000-60000)/420000);assert.equal(run('airFractionOf(gg,1)'),1);assert.equal(run('blockFractionOf(gg,0)'),0.1);assert.equal(run('blockFractionOf(gg,1)'),0.8);assert.equal(run("phaseOf(gg,0.05)"),'taxi-out');assert.equal(run("phaseOf(gg,0.5)"),'air');assert.equal(run("phaseOf(gg,0.9)"),'taxi-in');assert.equal(run('airFractionOf({ms:1000},0.3)'),0.3);assert.equal(run('horizonDip(0)'),0);assert.equal(run('horizonDip(null)'),0);assert.ok(Math.abs(run('horizonDip(36000)')-3.07)<.05,'horizon dip at 36,000 ft ≈ 3.07°');assert.ok(Math.abs(run('horizonDip(10000)')-1.62)<.05,'horizon dip at 10,000 ft ≈ 1.62°');
 assert.equal(run("arrivalDayDelta(Date.parse('2026-11-06T06:00:00Z'),15*3600000,'America/Los_Angeles','Australia/Sydney')"),2);
 assert.equal(run("arrivalDayDelta(Date.parse('2026-11-05T10:00:00Z'),2*3600000,'Europe/London','Europe/London')"),0);
 assert.equal(run("arrivalDayDelta(Date.parse('2026-11-05T14:00:00Z'),2*3600000,'Pacific/Apia','Pacific/Honolulu')"),-1);

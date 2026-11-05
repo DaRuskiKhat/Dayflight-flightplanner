@@ -38,6 +38,11 @@ assert(!JSON.stringify(portable).includes('hidden-manual-draft'));assert(!Object
 vm.runInContext("inputSource='manual'",context);
 portable=JSON.parse(vm.runInContext('JSON.stringify(planState(true))',context));assert.equal(portable.simbrief,null);
 
+// Taxi times: explicit taxi_out/taxi_in, else from off/on-block gaps; older saved plans default to 0.
+assert.equal(typeof plan.taxiOutSec,'number');
+{const t=clone();t.times.taxi_out='00:15:00';t.times.taxi_in='00:07:00';const tp=SimBrief.parse(t);assert.equal(tp.taxiOutSec,900);assert.equal(tp.taxiInSec,420);
+ const g=clone();delete g.times.taxi_out;delete g.times.taxi_in;g.times.est_out=new Date(Date.parse(g.times.est_off)-20*60000).toISOString().replace('.000','');g.times.est_in=new Date(Date.parse(g.times.est_on)+8*60000).toISOString().replace('.000','');const gp=SimBrief.parse(g);assert.equal(gp.taxiOutSec,1200);assert.equal(gp.taxiInSec,480);
+ const old=JSON.parse(JSON.stringify(tp));delete old.taxiOutSec;delete old.taxiInSec;const ov=SimBrief.validate(old);assert.equal(ov.taxiOutSec,0);assert.equal(ov.taxiInSec,0);}
 // Navlog telemetry: leg values from the fix ending the leg, wind/OAT from the nearest fix, fuel interpolated from takeoff fuel.
 assert.equal(plan.telemetryAvailable,false);assert.equal(SimBrief.telemetryAt(plan,.5),null);
 {const t=clone();t.params.units='kgs';t.fuel={plan_takeoff:'50000',plan_landing:'8000'};Object.assign(t.navlog[0],{heading_true:'092',track_true:'090',true_airspeed:'480',mach_thousandths:'0.830',groundspeed:'510',wind_dir:'270',wind_spd:'30',oat:'-52',fuel_plan_onboard:'40000'});
@@ -46,4 +51,4 @@ assert.equal(plan.telemetryAvailable,false);assert.equal(SimBrief.telemetryAt(pl
  assert.equal(SimBrief.telemetryAt(tp,1).fuel,8000);
  const saved=SimBrief.validate(JSON.parse(JSON.stringify(tp)));assert.equal(saved.telemetryAvailable,true);assert.equal(saved.fixes[1].hdg,92);
  const bad=JSON.parse(JSON.stringify(tp));bad.fixes[1].oat=999;assert.equal(SimBrief.validate(bad).fixes[1].oat,null);}
-console.log('Passed: SimBrief takeoff/taxi fallbacks, XML-style numeric and JSON-v2 times, timed route/date-line interpolation, altitude gaps, missing routes, invalid data and saved-plan validation, navlog telemetry.');
+console.log('Passed: SimBrief takeoff/taxi fallbacks, XML-style numeric and JSON-v2 times, timed route/date-line interpolation, altitude gaps, missing routes, invalid data and saved-plan validation, navlog telemetry, taxi times.');
