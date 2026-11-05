@@ -1,0 +1,15 @@
+{
+  "params":{"airac":"2403","time_generated":"2026-11-05T00:00:00Z"},
+  "general":{"icao_airline":"DEMO","flight_number":"101","route":"SYD DCT PACIFIC DCT LAX"},
+  "aircraft":{"icaocode":"B789"},
+  "origin":{"icao_code":"YSSY","name":"Sydney","pos_lat":"-33.9461","pos_long":"151.1772","elevation":"21","timezone":"11"},
+  "destination":{"icao_code":"KLAX","name":"Los Angeles","pos_lat":"33.9425","pos_long":"-118.4081","elevation":"125","timezone":"-8"},
+  "times":{"est_out":"2026-11-05T02:40:00Z","est_off":"2026-11-05T03:00:00Z","est_on":"2026-11-05T16:30:00Z","est_time_enroute":"13:30:00","taxi_out":"00:20:00"},
+  "navlog":[
+    {"ident":"TOC","pos_lat":"-29","pos_long":"158","time_total":"00:30:00","time_leg":"00:30:00","altitude_feet":"33000","stage":"CLB","via_airway":"DCT"},
+    {"ident":"PACIFIC1","pos_lat":"-10","pos_long":"178","time_total":"03:00:00","altitude_feet":"33000","stage":"CRZ","via_airway":"DCT"},
+    {"ident":"STEP","pos_lat":"6","pos_long":"-165","time_total":"06:00:00","altitude_feet":"35000","stage":"CRZ","via_airway":"DCT"},
+    {"ident":"PACIFIC2","pos_lat":"24","pos_long":"-145","time_total":"09:30:00","altitude_feet":"37000","stage":"CRZ","via_airway":"DCT"},
+    {"ident":"TOD","pos_lat":"34","pos_long":"-126","time_total":"13:00:00","altitude_feet":"37000","stage":"DSC","via_airway":"DCT"}
+  ]
+}

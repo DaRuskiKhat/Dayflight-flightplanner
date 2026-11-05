@@ -1,0 +1,265 @@
+@import url('https://fonts.googleapis.com/css2?family=DM+Sans:wght@400;500;600;700&family=Manrope:wght@400;500;600;700;800&display=swap');
+.date-control{position:relative}.date-trigger{display:flex;justify-content:space-between;align-items:center;border:1px solid #dbe1d9;border-radius:5px;background:white;color:#193e40;padding:12px;width:100%;text-align:left;height:43px}.date-picker{position:absolute;top:49px;left:0;z-index:10;width:100%;min-width:240px;padding:12px;background:#fffef8;border:1px solid #d7ded0;border-radius:8px;box-shadow:0 10px 28px #143b442e}.calendar-header{display:flex;align-items:center;gap:4px;margin-bottom:12px}.calendar-header button{border:0;background:#eef2e8;color:#31594e;border-radius:4px;font-size:21px;line-height:25px;width:25px}.calendar-header select{min-width:0;border:1px solid #e1e6dc;background:#fff;padding:5px;color:#284e42;border-radius:4px;flex:1;font-size:11px}.calendar-header button:disabled{opacity:.3;cursor:default}.calendar-week,.calendar-days{display:grid;grid-template-columns:repeat(7,1fr);gap:3px}.calendar-week{font-size:9px;color:#8a998a;text-align:center;margin-bottom:8px}.calendar-days button{border:0;border-radius:4px;background:transparent;color:#315345;font-size:11px;min-height:26px;padding:4px 0}.calendar-days button:hover{background:#edf2e3}.calendar-days button[aria-pressed=true]{background:#214e4b;color:#fff}.calendar-actions{display:flex;justify-content:flex-end;gap:8px;margin-top:13px;border-top:1px solid #e6ebdf;padding-top:10px}.calendar-actions button{border:1px solid #dce3d4;border-radius:4px;padding:7px 12px;background:#fff;color:#567460;font-size:10px}.calendar-actions #applyDate{background:#214e4b;color:white;border-color:#214e4b}.bounded-time{display:flex;align-items:center;gap:10px}.time-part{position:relative;flex:1;min-width:0}.bounded-time .time-part input{font-size:18px;text-align:center;font-variant-numeric:tabular-nums;padding:9px 28px 9px 8px}.time-colon{font-size:20px;color:#8b9b8c}.time-steppers{position:absolute;top:1px;bottom:1px;right:1px;display:flex;flex-direction:column;width:24px;border-left:1px solid #e6ebe0}.time-steppers button{flex:1;border:0;padding:0;background:#f0f3eb;color:#638173;font-size:10px;line-height:1}.time-steppers button:first-child{border-radius:0 4px 0 0;border-bottom:1px solid #e1e7d9}.time-steppers button:last-child{border-radius:0 0 4px 0}.time-steppers button:disabled{color:#c2cbbb;cursor:default}.time-hint{font-size:9px}.sky-panel{margin-top:18px;border:1px solid #dfe4dc;border-radius:8px;background:#fcfcf8;padding:16px 19px}.sky-title{font-size:8px;font-weight:700;letter-spacing:1.5px;color:#7e9384;display:flex;justify-content:space-between;gap:10px}.sky-title>span{font-weight:400;letter-spacing:0;font-size:9px;color:#92a08f}.sky-cards{display:grid;grid-template-columns:1fr 1fr;gap:20px;margin-top:15px}.sky-cards>div{display:flex;gap:12px;align-items:center}.sky-cards>div+div{border-left:1px solid #e2e7dc;padding-left:20px}.sky-cards>div>div{display:flex;flex-direction:column;gap:5px}.sky-icon{font-size:30px}.sky-cards b{font-size:10px;font-weight:600}.sky-cards b span{font-size:9px;font-weight:400;color:#8c9d8a}.sky-cards strong{font-size:15px;font-weight:500}.sky-cards small{font-size:10px;color:#859780}.celestial-key{color:#d8e3cd}@media(max-width:720px){.date-control,.bounded-time,.time-hint{grid-column:1/-1}.date-picker{width:100%;min-width:0}.calendar-days button{min-height:32px}.sky-panel{padding:14px}.sky-title{font-size:7px;letter-spacing:1px}.sky-title>span{font-size:7px}.sky-cards{gap:10px}.sky-cards>div{gap:7px}.sky-cards>div+div{padding-left:10px}.sky-cards strong{font-size:11px}.sky-cards small{font-size:9px}.sky-icon{font-size:22px}.sky-cards b span{font-size:8px}.map-legend{flex-wrap:wrap;max-width:95%;font-size:7px!important;gap:6px 10px!important}}
+.map-heading{gap:14px;flex-wrap:wrap}.map-heading .status{flex-shrink:0;margin-left:auto;font-size:12px;font-weight:700;line-height:1.4;padding:9px 13px;color:#ffe4a5;background:#3b3c26;border:1px solid #95804b;letter-spacing:.1px;box-shadow:0 2px 5px #0002}.map-heading .status[data-light=day]{color:#ffe4a5;background:#3b3c26;border-color:#95804b}.map-heading .status[data-light=civil]{color:#ffe2d5;background:#513b36;border-color:#ba8e7d}.map-heading .status[data-light=nautical]{color:#f0e4ff;background:#443b58;border-color:#a293be}.map-heading .status[data-light=astronomical]{color:#e0eaff;background:#35455f;border-color:#8c9fbd}.map-heading .status[data-light=night]{color:#e4eeff;background:#213957;border-color:#7c9ac4}@media(max-width:720px){.map-heading .status{font-size:11px;padding:8px 11px}.map-heading{gap:10px}}
+.endpoint-clock select{width:100%;border:1px solid #dbe1d9;background:#fff;border-radius:5px;padding:10px;color:#284c45;font-size:10px}.endpoint-clock .field-note{font-size:9px;line-height:1.7}.endpoint-clock label{font-size:8px;letter-spacing:.8px}.endpoint-clock{margin-bottom:6px}@media(max-width:720px){.endpoint-clock{grid-column:1/-1;width:100%}}
+.speed-unit-toggle{display:flex;gap:3px;padding:3px;border:1px solid #dbe1d9;background:#eef2e8;border-radius:5px;margin-top:12px}.speed-unit-toggle button{flex:1;background:transparent;border:0;border-radius:3px;color:#809080;padding:7px;font-size:11px}.speed-unit-toggle button[aria-pressed=true]{background:#214e4b;color:#fff;box-shadow:0 1px 3px #123e421a}.speed-unit-toggle button:hover{color:#214e4b}.speed-unit-toggle button[aria-pressed=true]:hover{color:#fff}@media(max-width:720px){.speed-unit-toggle{grid-column:1/-1;margin-top:4px}}
+[hidden]{display:none!important}.point-actions{display:flex;gap:7px}.point-actions .map-pick{margin-top:9px;flex:1;padding:9px 4px;font-size:10px;white-space:nowrap}.point-actions .active{background:#214e4b;color:#fff;border-color:#214e4b}.swap-row{display:flex;justify-content:center;margin:13px 0 0}.swap-row button{background:none;border:0;color:#7d9385;font-size:10px;padding:3px 8px}.coordinate-panel{padding:12px;margin-top:10px;border:1px solid #dbe3d4;border-radius:5px;background:#f3f5ed}.coordinate-panel label{margin-top:0;font-size:8px;letter-spacing:.6px}.coordinate-panel input{font-size:11px}.coordinate-panel .field-note{display:block;font-size:9px;line-height:1.7}.coordinate-apply{border:0;background:#214e4b;color:white;font-size:10px;padding:9px 12px;border-radius:4px;margin-top:10px}.coordinate-error{font-size:10px;color:#a24232;margin:6px 0 0}.point-zone label{font-size:8px}.point-zone select,#offsetMode{width:100%;border:1px solid #dbe1d9;background:#fff;border-radius:5px;padding:10px;color:#284c45;font-size:10px}#offsetWrap .field-note{font-size:9px;line-height:1.7}.band-toggle{position:absolute;right:16px;top:12px;z-index:2;display:flex;align-items:center;gap:6px;background:#0b3039bb;border:1px solid #d5ded12a;padding:8px 10px;border-radius:5px;color:#bfcebf;font-size:9px;letter-spacing:0;font-weight:400;margin:0;cursor:pointer}.band-toggle input{accent-color:#dbbf7c;width:12px;height:12px;margin:0}#mapPickBanner{position:absolute;z-index:3;left:50%;top:8px;transform:translateX(-50%);width:max-content;max-width:95%;display:flex;align-items:center;gap:10px;background:#fcf4d9;color:#34534a;font-size:11px;padding:9px 12px;border:1px solid #d3bd7b;border-radius:6px;box-shadow:0 3px 10px #0002}#mapPickBanner button{border:0;border-left:1px solid #c4c6a7;color:#6a7757;background:none;padding:2px 0 2px 10px;font-size:10px}.map-legend{background:#0b30398c;border:1px solid #d5ded112;padding:8px 10px;border-radius:4px;pointer-events:none}@media(max-width:720px){.point-actions,.coordinate-panel,.point-zone,.swap-row,#offsetMode,#offsetWrap{grid-column:1/-1}.point-actions{margin-top:0}.coordinate-panel{margin-top:0}.point-actions .map-pick{font-size:11px}.band-toggle{right:9px;top:9px;padding:6px;font-size:8px}.map-legend{padding:7px 6px;gap:7px}.map-clock{top:14px}.swap-row{margin:2px 0}#mapPickBanner{font-size:9px;gap:6px;padding:8px;top:49px}}
+.map-pick{background:#edf1e9;border:1px solid #dce3d6;color:#547363;padding:9px;width:100%;border-radius:5px;font-size:10px;margin-top:12px}#timingMode,#customZone{width:100%;border:1px solid #dbe1d9;background:white;padding:10px;color:#284c45;border-radius:5px;font-size:11px}.live-clocks{display:grid;grid-template-columns:1fr 1fr 1fr;margin-top:17px;border-bottom:1px solid #dfe4dc;padding:0 0 17px;gap:14px}.live-clocks>div{display:flex;flex-direction:column;gap:6px}.live-clocks span{font-size:8px;letter-spacing:1.1px;color:#8a9c8d}.live-clocks strong{font:500 21px Manrope,sans-serif}.live-clocks small{font-size:9px;color:#829385;line-height:1.6}.live-clocks>div:last-child{text-align:right}@media(max-width:720px){#timingMode,#customZoneWrap,.map-pick{grid-column:1/-1}.live-clocks{gap:9px}.live-clocks span{font-size:7px;letter-spacing:.5px}.live-clocks strong{font-size:18px}.live-clocks small{font-size:8px}}
+:root{--bg:#f5f5ee;--ink:#193e40;--muted:#7a8986;--line:#dfe4dc;--day:#eabe61;--twilight:#c39078;--night:#395b78}*{box-sizing:border-box}body{margin:0;background:var(--bg);color:var(--ink);font-family:'DM Sans',sans-serif;font-size:14px}button,input,select{font:inherit}button,a,input,select,summary{-webkit-tap-highlight-color:transparent}button{cursor:pointer}button:focus-visible,a:focus-visible,summary:focus-visible{outline:3px solid #d7ae53;outline-offset:4px}header{height:91px;padding:0 5%;border-bottom:1px solid var(--line);display:flex;align-items:center;justify-content:space-between;background:#fafaf5}.brand{font-family:Manrope,sans-serif;display:flex;align-items:center;font-size:25px;font-weight:800;color:var(--ink);text-decoration:none;letter-spacing:-1px}.logo{font-size:42px;margin-right:10px;line-height:1}.brand-sub{font-family:'DM Sans',sans-serif;font-size:12px;font-weight:400;letter-spacing:0;color:var(--muted);margin-left:28px;padding-left:28px;border-left:1px solid var(--line)}.quiet{background:none;color:var(--ink);border:1px solid var(--line);padding:10px 15px;border-radius:6px;font-weight:500}.quiet:hover{background:#e8ece3}main{max-width:1510px;margin:auto;padding:44px 5% 0}.intro{display:flex;align-items:center;justify-content:space-between;margin-bottom:33px}.eyebrow{font-size:9px;font-weight:700;letter-spacing:2px;color:#8c9a91}.intro .eyebrow{color:#879d85}h1{font-family:Manrope,sans-serif;font-size:44px;letter-spacing:-2px;margin:8px 0 9px;font-weight:500}p{color:var(--muted);line-height:1.7;margin:0}.tag{font-size:11px;display:flex;align-items:center;gap:8px;color:#7b8e81}.tag span{height:6px;width:6px;background:#7d9b76;border-radius:50%}.workspace{display:grid;grid-template-columns:293px minmax(0,1fr);gap:25px}.planner{background:#fcfcf8;border:1px solid var(--line);border-radius:10px;align-self:start;padding:24px}.section-title{display:flex;align-items:center;gap:11px}.step{font-size:10px;border:1px solid #dbe1d7;border-radius:50%;width:25px;height:25px;display:grid;place-items:center;color:#82917f}h2{font-family:Manrope,sans-serif;font-size:15px;font-weight:700;margin:0}.planner .section-title{margin-bottom:26px}label{font-size:9px;font-weight:700;letter-spacing:1px;display:block;margin:18px 0 9px}.subtle{color:#8b9790;font-size:9px;letter-spacing:0;float:right;font-weight:400}input:not([type=range]){width:100%;border:1px solid #dbe1d9;background:#fff;border-radius:5px;color:var(--ink);padding:11px 12px;outline:none;height:43px}input:focus{border-color:#6b9994;box-shadow:0 0 0 2px #5a8f8918}.field-note,.between{font-size:10px;color:#8a9890;min-height:15px;margin-top:7px}.between{position:relative}.between button{border:1px solid var(--line);background:#fcfcf8;border-radius:50%;position:absolute;right:9px;top:-1px;width:27px;height:27px;color:#6b8276;font-size:17px}.divider{height:1px;background:var(--line);margin:21px 0}.duration{position:relative}.duration span{position:absolute;right:13px;top:14px;color:#819087;font-size:12px;pointer-events:none}.duration input{padding-right:65px}.primary{margin-top:24px;display:flex;justify-content:space-between;align-items:center;width:100%;background:#214e4b;color:white;border:0;padding:15px;border-radius:5px;font-size:12px;font-weight:600}.primary:hover{background:#32645e}.primary span{font-size:18px}#error{font-size:11px;color:#a24232;margin-top:8px}.presets{border-top:1px solid var(--line);margin-top:23px;padding-top:24px}.presets .eyebrow{font-size:8px;letter-spacing:1.3px}.presets button{width:100%;display:flex;justify-content:space-between;border:0;border-bottom:1px solid #e9ece5;background:none;font-size:11px;padding:13px 0;color:#6d8278}.presets button:last-child{border:0}.presets button:hover{color:#153c38}.results{min-width:0}.map-card{overflow:hidden;border-radius:10px;background:#103b40;color:white;box-shadow:0 6px 15px #123c4110}.map-heading{padding:23px 25px 0;display:flex;justify-content:space-between;align-items:center}.map-heading .eyebrow{font-size:8px;color:#8cb5ae;letter-spacing:1.6px}.map-heading h2{font-weight:500;font-size:20px;margin-top:8px}.map-heading h2 span{color:#70a39c;margin:0 9px}.status{font-size:10px;padding:7px 11px;background:#eabe6119;border:1px solid #eabe6140;border-radius:20px;color:#f4d18c}.map-wrap{height:342px;position:relative;margin-top:12px}canvas{width:100%;height:100%;display:block}.map-clock{position:absolute;top:14px;left:25px;display:flex;flex-direction:column;gap:3px;pointer-events:none}.map-clock span:first-child{font-size:10px;color:#9abbb4}.map-clock strong{font-family:Manrope,sans-serif;font-size:26px;letter-spacing:1px;font-weight:500}.map-clock span:last-child{font-size:7px;letter-spacing:1.6px;color:#8fafa9}.map-legend{position:absolute;bottom:16px;left:25px;display:flex;gap:16px;font-size:9px;color:#b6c7c2}.map-legend span{display:flex;align-items:center;gap:6px}.map-legend i{width:6px;height:6px;border-radius:50%}.day{background:var(--day)}.twilight{background:var(--twilight)}.night{background:var(--night)}.map-credit{position:absolute;right:16px;bottom:16px;font-size:7px;color:#70938f}.map-footer{border-top:1px solid #ffffff12;padding:14px 25px;display:flex;justify-content:space-between;font-size:9px;color:#9fbbb4}.map-footer>div{display:flex;align-items:center;gap:7px}.pulse{width:5px;height:5px;background:#c7d59a;border-radius:50%}.stats{display:grid;grid-template-columns:repeat(3,1fr);background:#fcfcf8;border:1px solid var(--line);border-radius:8px;margin:18px 0; padding:21px 0}.stats>div{display:flex;align-items:center;gap:15px;justify-content:center;border-right:1px solid var(--line)}.stats>div:last-child{border:0}.stat-icon{font-size:30px;font-family:serif;font-weight:400}.sun{color:#c3a359}.dusk{color:#b88d73}.moon{color:#687e99}.stats>div>div{display:flex;flex-direction:column;gap:3px}.stats span:not(.stat-icon){font-size:10px;color:#809083}.stats strong{font:500 23px Manrope,sans-serif;letter-spacing:-.5px}.stats small{font-size:9px;color:#99a49b}.timeline-card{border:1px solid var(--line);border-radius:8px;background:#fcfcf8;padding:23px 25px}.right{margin-left:auto;color:#8b988e;font-size:10px}.endpoint-row{display:flex;justify-content:space-between;margin-top:25px}.endpoint-row>div{display:flex;flex-direction:column;gap:5px}.endpoint-row b{font-size:12px;letter-spacing:1px}.endpoint-row span{font-size:10px;color:#85958a}.arr{text-align:right}.track-wrap{height:44px;margin:12px 0 0;position:relative;touch-action:none;user-select:none;-webkit-user-select:none;cursor:ew-resize}.track-wrap *{-webkit-user-drag:none;user-select:none;-webkit-user-select:none}.track-wrap.scrubbing{cursor:grabbing}#segments{height:10px;width:100%;display:flex;overflow:hidden;border-radius:4px;position:absolute;top:17px;pointer-events:none}#segments span{height:100%}#scrub{position:absolute;inset:0;width:100%;height:44px;margin:0;padding:0;opacity:0;cursor:ew-resize;z-index:2;touch-action:none;-webkit-user-drag:none;user-select:none}#scrubTrack:focus-within #cursor{box-shadow:0 0 0 3px #fcfcf8,0 0 0 5px #769a86}#cursor{position:absolute;top:10px;width:3px;height:24px;background:#244b45;box-shadow:0 0 0 3px #fcfcf8;border-radius:2px;pointer-events:none}.scale{display:flex;justify-content:space-between;font-size:9px;color:#96a095}.play-row{display:flex;gap:12px;align-items:center;margin-top:24px}.play{width:36px;height:36px;border:0;border-radius:50%;background:#214e4b;color:white;font-size:12px}.play-row>div{display:flex;flex-direction:column;gap:4px}.play-row strong{font-size:11px;font-weight:500}.play-row span{font-size:9px;color:#8d9b8f}.play-row select{margin-left:auto;border:0;color:#7c8e7f;background:#f0f3eb;padding:7px;border-radius:4px;font-size:9px}.play-row .quiet{font-size:10px;padding:7px 9px}.events{display:flex;gap:10px;flex-wrap:wrap;margin-top:18px}.event{font-size:10px;border:1px solid #e0e5db;border-radius:5px;padding:10px 12px;background:#f6f7f0;color:#647f70;cursor:pointer}.event:hover{background:#edf1e5}.details-row{display:flex;gap:16px;align-items:start;margin-top:19px}details{flex:1;font-size:10px;color:#899789}summary{cursor:pointer;list-style:none;padding:9px 0}summary span{margin-left:12px}details p{margin:9px 0;max-width:640px;line-height:1.8;font-size:11px}details a{color:#58796b}.details-row>.quiet{border:0;font-size:10px;padding-right:0}footer{margin-top:38px;padding:22px 0;border-top:1px solid var(--line);display:flex;justify-content:space-between;color:#95a08f;font-size:9px}.brand-mini{font:700 15px Manrope,sans-serif;color:#71866f}#toast{position:fixed;bottom:24px;left:50%;transform:translateX(-50%);background:#214e4b;color:white;padding:12px 22px;border-radius:8px;box-shadow:0 4px 20px #0002;opacity:0;transition:opacity .2s;pointer-events:none;font-size:12px}@media(min-width:1600px){main{padding-top:60px}.map-wrap{height:400px}}@media(max-width:1000px){main{padding:28px 3% 0}.workspace{grid-template-columns:255px minmax(0,1fr);gap:16px}.planner{padding:19px}.map-wrap{height:300px}.tag,.brand-sub{display:none}.stats>div{gap:8px}.stats strong{font-size:19px}.stat-icon{font-size:24px}.play-row span{display:none}.map-credit{display:none}}@media(max-width:720px){header{height:73px;padding:0 5%}.brand{font-size:22px}h1{font-size:36px}.intro{margin-bottom:24px}.intro p{font-size:12px}.workspace{display:flex;flex-direction:column}.planner{width:100%;padding:21px}.planner form{display:grid;grid-template-columns:1fr 1fr;gap:8px 14px}.planner label{margin:10px 0 0;grid-column:1/-1}.planner input,.duration,.field-note,.between{grid-column:1/-1}.divider{grid-column:1/-1;width:100%;margin:8px 0}.primary,#error{grid-column:1/-1}.presets{display:none}.planner .section-title{margin-bottom:8px}.map-heading{padding:20px 18px 0}.map-heading h2{font-size:18px}.map-wrap{height:285px}.map-clock{left:18px;top:12px}.map-clock strong{font-size:22px}.map-footer{padding:13px 18px}.stats{padding:18px 0}.stats strong{font-size:18px}.stats>div{gap:7px}.stat-icon{font-size:23px}.timeline-card{padding:20px 18px}.right{font-size:9px}.section-title h2{font-size:14px}.play-row{gap:9px}.play-row select{max-width:110px}.play-row strong{font-size:10px}.map-legend{left:18px;gap:12px}footer span:last-child{display:none}.details-row{gap:8px}.details-row>.quiet{white-space:nowrap}.events{gap:6px}.event{font-size:9px;padding:8px}.stats small{font-size:8px}}
+
+.civil{background:#d5a38c}.nautical{background:#9b8cae}.astronomical{background:#647c9f}.nautical-icon{color:#9b8cae}.astro-icon{color:#647c9f}.stats{grid-template-columns:repeat(5,1fr)}.stats>div{gap:8px}.stats strong{font-size:20px}.stats .stat-icon{font-size:24px}.stats span:not(.stat-icon){font-size:9px}.map-legend{gap:12px}.events{gap:7px}.event{font-size:9px}@media(max-width:1100px){.stats .stat-icon{display:none}.stats strong{font-size:18px}.stats span:not(.stat-icon){font-size:8px}.stats small{font-size:8px}.map-legend{gap:9px;font-size:8px}}@media(max-width:720px){.stats{grid-template-columns:repeat(3,1fr);gap:22px 0;padding:20px 0}.stats>div:nth-child(3){border:0}.stats>div:nth-child(4){grid-column:1/3}.stats>div:nth-child(5){grid-column:3}.stats span:not(.stat-icon){font-size:9px}.stats .stat-icon{display:inline}.map-legend{font-size:7px;gap:8px}.status{font-size:8px;padding:6px 8px}}
+
+.band-toggle input[type=checkbox]{width:12px;height:12px;padding:0;margin:0;box-shadow:none;border:0;border-radius:2px;background:transparent}.coordinate-panel input[type=text]{height:40px;padding:9px;font-size:11px}.point-zone select{font-size:10px}
+
+.bounded-time select{flex:1;min-width:0;height:43px;padding:8px 12px;border:1px solid #dbe1d9;border-radius:5px;background:#fff;color:#193e40;font-size:18px;font-variant-numeric:tabular-nums;cursor:pointer}.bounded-time select:focus{outline:2px solid #769a86;outline-offset:1px}.calendar-actions #todayDate{margin-right:auto;color:#214e4b;background:#eef3e7}.track-wrap.scrubbing #scrub{cursor:grabbing}
+
+.map-navigation{position:absolute;right:15px;top:12px;z-index:2;display:flex;flex-direction:column;gap:3px;align-items:center}.map-navigation button{width:30px;height:30px;border:1px solid #638a86;border-radius:4px;background:#153e47f2;color:#f2edcd;font-size:19px;line-height:1;box-shadow:0 2px 6px #0002}.map-navigation button:hover{background:#2e5d60}.map-navigation button:disabled{opacity:.4;cursor:default}.map-navigation span{font-size:8px;color:#c0d1c0;margin-top:3px;background:#0c2b38ab;padding:3px 5px;border-radius:3px}#map{touch-action:none;user-select:none;-webkit-user-drag:none}#map:focus-visible{outline:2px solid #dcc88d;outline-offset:-2px}@media(max-width:720px){.map-navigation{right:10px;top:10px}.map-navigation button{width:28px;height:28px}}
+
+.live-clocks{grid-template-columns:repeat(4,minmax(0,1fr))}.live-clocks .aircraft-clock{padding-left:12px;border-left:1px solid #d9e2d3}.aircraft-clock strong{color:#315f55}.live-clocks .aircraft-clock small{font-size:9px;line-height:1.5}.live-clocks .aircraft-clock #aircraftZone{font-size:8px;color:#7d927e}@media(max-width:720px){.live-clocks{grid-template-columns:repeat(2,minmax(0,1fr));gap:18px 15px}.live-clocks .aircraft-clock{padding-left:0;border:0;text-align:right}.live-clocks>div:last-child{text-align:right}.live-clocks span{font-size:8px;letter-spacing:.6px}}
+/* Readable flight details and a combined departure-time picker. */
+:root{--muted:#62766e}
+body{font-size:15px}
+.workspace{grid-template-columns:320px minmax(0,1fr);gap:26px}
+.brand-sub,.tag{font-size:14px}
+.intro p{font-size:16px}
+.eyebrow,.intro .eyebrow{font-size:12px;letter-spacing:1.5px}
+.planner{padding:24px}
+.planner label,.planner .endpoint-clock label,.planner .point-zone label,.planner .coordinate-panel label{font-size:12px;letter-spacing:.6px;line-height:1.45}
+.planner .subtle{font-size:12px;color:#66796e}
+.planner .field-note,.planner .endpoint-clock .field-note,.planner .coordinate-panel .field-note{font-size:12px;line-height:1.65;color:#66796e}
+.planner input:not([type=hidden]),.planner select,.planner .endpoint-clock select,.planner .point-zone select,#timingMode{font-size:14px;min-height:46px}
+.point-actions .map-pick,.map-pick{font-size:13px;padding:11px 6px}
+.swap-row button{font-size:13px;padding:6px 8px}
+.coordinate-apply{font-size:13px;padding:10px 13px}
+.primary{font-size:15px;padding:17px 16px}
+#error,.coordinate-error{font-size:13px}
+.presets .eyebrow{font-size:11px;letter-spacing:1px}
+.presets button{font-size:13px;padding:15px 0}
+.speed-unit-toggle button{font-size:14px;padding:9px}
+.duration span{font-size:14px}
+.date-trigger{font-size:15px;height:48px}
+.calendar-header select{font-size:14px;min-height:34px}
+.calendar-week{font-size:12px}
+.calendar-days button{font-size:14px;min-height:33px}
+.calendar-actions button{font-size:13px;padding:9px 12px}
+.time-control{position:relative;min-width:0}
+.time-trigger{display:flex;align-items:center;justify-content:space-between;width:100%;height:48px;border:1px solid #dbe1d9;border-radius:5px;background:#fff;color:#193e40;padding:10px 13px;font-size:21px;font-variant-numeric:tabular-nums;text-align:left}
+.time-trigger>span:last-child{font-size:22px;color:#658078}
+.time-trigger[aria-expanded=true]{border-color:#6a9488;box-shadow:0 0 0 2px #6a948822}
+.time-picker{position:absolute;top:54px;left:0;z-index:20;width:216px;padding:9px;background:#fffef9;border:1px solid #cfd9ca;border-radius:7px;box-shadow:0 10px 24px #153e4428}
+.time-picker.above{top:auto;bottom:54px}
+.time-picker-head,.time-picker-columns{display:grid;grid-template-columns:1fr 1fr;gap:8px}
+.time-picker-head{font-size:12px;color:#5d776a;text-align:center;padding:4px 0 9px;font-weight:600}
+.time-options{height:216px;overflow-y:auto;overscroll-behavior:contain;border:1px solid #e0e6d9;border-radius:4px;scrollbar-width:thin;scrollbar-color:#b5c7b7 #f5f7f0}
+.time-options button{display:block;width:100%;height:36px;border:0;border-radius:3px;background:transparent;color:#264d43;font-size:17px;font-variant-numeric:tabular-nums;text-align:center;user-select:none}
+.time-options button:hover{background:#edf3e6}
+.time-options button[aria-selected=true]{background:#214e4b;color:#fff;font-weight:700}
+.time-options button:focus-visible{outline:2px solid #ddbf75;outline-offset:-3px}
+.time-picker-foot{font-size:12px;color:#657b6e;text-align:center;padding:10px 0 2px}
+.map-heading .eyebrow{font-size:11px;color:#b4cec5}
+.map-heading h2{font-size:23px}
+.map-clock span:first-child{font-size:13px;color:#bfd4c9}
+.map-clock strong{font-size:30px}
+.map-clock span:last-child{font-size:11px;letter-spacing:1px;color:#b2c9c0}
+.map-footer{font-size:12px;line-height:1.5;gap:14px;align-items:center}
+.map-footer>div{min-width:0}
+.map-legend{font-size:12px;gap:12px;color:#e0e9dc;background:#0b2d38dd}
+.map-legend i{height:8px;width:8px}
+.map-credit{font-size:10px;color:#b1c8be;right:15px;bottom:54px;max-width:65%;text-align:right}
+.map-navigation span{font-size:12px}
+.sky-panel{padding:20px 22px}
+.sky-title{font-size:12px;letter-spacing:1px;color:#546f60}
+.sky-title>span{font-size:12px;color:#667c6c}
+.sky-cards b{font-size:14px}
+.sky-cards b span{font-size:13px;color:#647d69}
+.sky-cards strong{font-size:18px}
+.sky-cards small{font-size:14px;color:#61796a}
+.journey-panels{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:16px;margin-top:20px}
+.journey-panel{background:#fcfcf8;border:1px solid #dce3d6;border-radius:9px;padding:23px;min-width:0}
+.destination-panel{border-color:#bacdc0;background:#fbfcf6}
+.panel-heading{display:flex;align-items:center;gap:12px;min-height:49px}
+.panel-icon{width:34px;height:34px;border-radius:50%;background:#edf2e7;color:#587e69;display:grid;place-items:center;font-size:20px;flex-shrink:0}
+.panel-kicker{display:block;font-size:12px;font-weight:700;letter-spacing:1.2px;color:#617d69;margin-bottom:5px}
+.panel-heading h3{font-family:Manrope,sans-serif;font-size:18px;font-weight:600;line-height:1.4;margin:0;overflow-wrap:anywhere}
+.panel-hero{display:flex;flex-direction:column;gap:8px;padding:24px 0 21px;min-height:144px}
+.metric-label{display:block;font-size:13px;line-height:1.45;color:#5e7768}
+.panel-hero>strong,.eta-line>strong{font-family:Manrope,sans-serif;font-size:38px;line-height:1.15;font-weight:600;letter-spacing:-.8px;font-variant-numeric:tabular-nums;color:#214e4b}
+.metric-date{display:block;font-size:13px;line-height:1.6;color:#5f7669;overflow-wrap:anywhere}
+.eta-line{display:flex;align-items:center;gap:11px}
+.day-change{display:inline-flex;align-items:center;justify-content:center;background:#e8efdb;color:#365c37;border:1px solid #c2d2ad;border-radius:6px;min-width:35px;padding:5px 8px;font-size:16px;font-weight:700;line-height:1.2}
+.panel-metrics{display:grid;grid-template-columns:1fr 1fr;gap:17px;padding-top:19px;border-top:1px solid #e0e7d9}
+.panel-metrics>div{display:flex;flex-direction:column;gap:6px;min-width:0}
+.panel-metrics strong{font:500 23px Manrope,sans-serif;letter-spacing:-.4px;font-variant-numeric:tabular-nums;line-height:1.4}
+.aircraft-position-bar{display:flex;justify-content:space-between;align-items:center;gap:18px;margin:14px 0 20px;padding:18px 22px;border:1px solid #dce5d7;border-radius:8px;background:#edf3e7}
+.aircraft-position-bar>div:first-child{display:flex;align-items:center;gap:17px;flex-shrink:0}
+.aircraft-position-bar strong{font:600 26px Manrope,sans-serif;color:#315f55;font-variant-numeric:tabular-nums}
+.aircraft-position-bar>div:last-child{text-align:right;min-width:0}
+#aircraftZone{display:block;font-size:12px;line-height:1.6;color:#566f5c;overflow-wrap:anywhere}
+.stats{grid-template-columns:repeat(5,minmax(0,1fr));gap:10px;padding:0;margin:18px 0;background:none;border:0;border-radius:0}
+.stats>div:nth-child(n){grid-column:auto;display:flex;justify-content:center;gap:8px;padding:17px 10px;border:1px solid #dce3d6;border-radius:7px;background:#fcfcf8;min-width:0}
+.stats span:not(.stat-icon){font-size:12px;line-height:1.5;color:#5c7465}
+.stats strong{font-size:23px;line-height:1.4;letter-spacing:-.6px}
+.stats small{font-size:12px;color:#647c69;line-height:1.5}
+.stats .stat-icon{font-size:23px;flex-shrink:0}
+.timeline-card{padding:24px}
+.section-title h2{font-size:18px}
+.step{font-size:12px;width:28px;height:28px}
+.right{font-size:13px;color:#61796a}
+.endpoint-row b{font-size:14px}
+.endpoint-row span,.scale{font-size:12px;color:#62796a;line-height:1.6}
+.play-row{flex-wrap:wrap;gap:12px}
+.play{width:40px;height:40px}
+.play-row strong{font-size:14px}
+.play-row span{display:block;font-size:12px;color:#657c6b;line-height:1.6}
+.play-row select,.play-row .quiet{font-size:12px;padding:9px}
+.event{font-size:12px;padding:11px 12px;line-height:1.5;color:#4f705e}
+details{font-size:13px;color:#607b67}
+summary{font-size:14px}
+details p{font-size:13px;color:#61786a;line-height:1.8}
+.details-row>.quiet{font-size:13px}
+footer{font-size:12px;color:#667d6a;gap:15px}
+.brand-mini{font-size:16px}
+#toast{font-size:14px}
+@media(max-width:1150px){.workspace{grid-template-columns:290px minmax(0,1fr);gap:20px}.planner{padding:20px}.stats{grid-template-columns:repeat(3,minmax(0,1fr))}.stats .stat-icon{display:inline}.journey-panel{padding:19px}.panel-metrics{gap:12px}.panel-heading h3{font-size:17px}.panel-hero>strong,.eta-line>strong{font-size:34px}.panel-metrics strong{font-size:21px}.aircraft-position-bar>div:first-child{gap:10px}.aircraft-position-bar .metric-label{max-width:100px}}
+@media(max-width:850px) and (min-width:721px){.journey-panels{grid-template-columns:1fr}.aircraft-position-bar{align-items:flex-start;flex-direction:column;gap:10px}.aircraft-position-bar>div:last-child{text-align:left}.sky-title{flex-direction:column;gap:7px}.sky-cards{grid-template-columns:1fr}.sky-cards>div+div{border-left:0;padding:12px 0 0;border-top:1px solid #e0e7da}}
+@media(max-width:720px){main{padding:28px 4% 0}.workspace{display:flex;gap:20px}.planner{padding:22px}.planner form{gap:9px 14px}.time-control{grid-column:1/-1}.planner label{margin-top:13px}.map-wrap{height:340px}.map-heading{padding:20px}.map-heading h2{font-size:21px}.map-clock strong{font-size:27px}.map-legend{font-size:12px!important;gap:9px 14px!important;max-width:calc(100% - 36px)}.map-credit{font-size:10px;bottom:76px;max-width:70%}.map-footer{padding:14px 18px;flex-wrap:wrap;gap:8px}.map-heading .status{font-size:12px}.sky-panel{padding:18px}.sky-title{font-size:11px;flex-direction:column;gap:6px}.sky-title>span{font-size:12px}.sky-cards{gap:10px}.sky-cards b{font-size:13px}.sky-cards b span{font-size:12px}.sky-cards strong{font-size:16px}.sky-cards small{font-size:13px}.journey-panels{grid-template-columns:1fr;gap:14px;margin-top:18px}.journey-panel{padding:22px}.panel-heading h3{font-size:19px}.panel-hero{padding-top:22px}.panel-hero>strong,.eta-line>strong{font-size:38px}.panel-metrics strong{font-size:24px}.metric-label,.metric-date{font-size:13px}.aircraft-position-bar{padding:17px 19px;align-items:flex-start;flex-direction:column;gap:9px}.aircraft-position-bar>div:first-child{width:100%;justify-content:space-between}.aircraft-position-bar .metric-label{max-width:none}.aircraft-position-bar>div:last-child{text-align:left}.stats{grid-template-columns:repeat(2,minmax(0,1fr));gap:10px}.stats>div:nth-child(n){grid-column:auto;padding:17px 12px}.stats>div:last-child{grid-column:1/-1}.stats strong{font-size:25px}.stats span:not(.stat-icon),.stats small{font-size:12px}.timeline-card{padding:21px 18px}.section-title{flex-wrap:wrap;gap:9px}.section-title h2{font-size:17px}.right{font-size:12px}.endpoint-row span,.scale{font-size:12px}.play-row>div{flex:1;min-width:175px}.play-row span{display:block;font-size:12px}.play-row select{max-width:none;margin-left:52px}.event{font-size:12px}.details-row{flex-wrap:wrap}footer{font-size:12px;flex-wrap:wrap}.brand-mini{font-size:16px}}
+
+.stats span:not(.stat-icon){min-height:36px;display:block}@media(max-width:720px){.stats span:not(.stat-icon){min-height:18px}}
+
+/* Keep simulation controls beside the map; tighten cards without reducing type. */
+.results>.timeline-card{margin-top:14px;padding:19px 23px}.results>.timeline-card .endpoint-row{margin-top:16px}.results>.timeline-card .play-row{margin-top:14px}.results>.timeline-card .events{margin-top:12px}.sky-panel{margin-top:12px;padding:15px 20px}.sky-cards{margin-top:10px;gap:16px}.journey-panels{margin-top:12px;gap:12px}.journey-panel{padding:18px}.panel-heading{min-height:40px}.panel-hero{min-height:118px;padding:16px 0 14px;gap:6px}.panel-metrics{padding-top:12px;gap:12px}.panel-metrics>div{gap:4px}.aircraft-position-bar{margin:10px 0 12px;padding:12px 18px}.stats{margin:12px 0}.stats>div:nth-child(n){padding:12px 10px}
+@media(min-width:721px) and (max-height:1000px){header{height:78px}main{padding-top:24px}.intro{margin-bottom:20px}.map-wrap{height:clamp(220px,26vh,290px)}.map-heading{padding-top:18px}.map-footer{padding-top:10px;padding-bottom:10px}}
+@media(max-width:720px){.results>.timeline-card{margin-top:12px;padding:18px}.journey-panel{padding:19px}.panel-hero{min-height:0;padding:16px 0 14px}.sky-panel{padding:16px}.aircraft-position-bar{padding:13px 17px}.stats>div:nth-child(n){padding:14px 11px}}
+
+.map-navigation{display:grid;grid-template-columns:30px 30px;gap:4px}.map-navigation span{margin:0;text-align:center}.map-navigation #followAircraft[aria-pressed=true]{background:#486b55;color:#fff0b7;border-color:#e3c482;box-shadow:0 0 0 1px #e3c482}.map-navigation #centerAircraft{font-size:22px}@media(max-width:720px){.map-navigation{grid-template-columns:28px 28px}}
+
+/* Use wide screens for a journey rail; keep sky telemetry inside the map card. */
+main{max-width:2040px;padding-left:3%;padding-right:3%}
+.info-rail{min-width:0}
+.map-card .sky-panel{margin:0;border:0;border-top:1px solid #ffffff20;border-radius:0;background:#123b40;padding:12px 24px;color:#eef4e9}
+.map-card .sky-title{color:#c8ddd1;font-size:12px;letter-spacing:.8px;align-items:center}
+.map-card .sky-title>span{color:#b6cfc4;font-size:12px}
+.map-card .sky-cards{margin-top:9px;gap:16px;grid-template-columns:1fr 1fr}
+.map-card .sky-cards>div{gap:10px}
+.map-card .sky-cards>div+div{border-color:#ffffff26;padding-left:16px;padding-top:0;border-top:0}
+.map-card .sky-cards>div>div{gap:3px}
+.map-card .sky-cards b{font-size:13px;color:#e4eee0}
+.map-card .sky-cards b span,.map-card .sky-cards small{color:#bed2c8;font-size:13px}
+.map-card .sky-cards strong{font-size:16px;line-height:1.35}
+.map-card .sky-icon.sun{color:#f2cc76}.map-card .sky-icon.moon{color:#d4e1ff}
+.map-card .sky-icon{font-size:27px}
+
+.info-rail .journey-panels{grid-template-columns:repeat(3,minmax(0,1fr));margin:0;gap:12px;align-items:stretch}
+.info-rail .journey-panel{padding:15px 17px}
+.info-rail .panel-heading{gap:9px;min-height:35px}
+.info-rail .panel-heading h3{font-size:17px}
+.info-rail .panel-icon{width:29px;height:29px;font-size:18px}
+.info-rail .panel-kicker{font-size:11px;margin-bottom:2px}
+.info-rail .panel-hero{min-height:0;padding:12px 0 10px;gap:4px}
+.info-rail .panel-hero>strong,.info-rail .eta-line>strong{font-size:32px}
+.info-rail .panel-metrics{padding-top:10px;gap:9px}
+.info-rail .panel-metrics strong{font-size:20px}
+.info-rail .metric-label,.info-rail .metric-date{font-size:12px;line-height:1.45}
+.info-rail .aircraft-position-bar{display:block;margin:0;background:#edf3e7}
+.info-rail .aircraft-position-bar>div:first-child{display:flex;justify-content:flex-start;gap:9px;align-items:center;width:auto}
+.info-rail .aircraft-position-bar .panel-hero{display:flex;flex-direction:column;align-items:flex-start}
+.info-rail .aircraft-position-bar>div:last-child{text-align:left}
+.aircraft-zone-note{border-top:1px solid #dce5d7;padding-top:10px}
+.info-rail #aircraftZone{font-size:12px;line-height:1.6}
+@media(min-width:1400px){
+  .workspace{grid-template-columns:300px minmax(0,1fr);gap:22px}
+  .results{display:grid;grid-template-columns:minmax(0,1fr) 220px;gap:14px 18px;align-content:start;align-items:start}
+  .results>.map-card{grid-column:1;grid-row:1}
+  .results>.timeline-card{grid-column:1;grid-row:2;margin:0}
+  .results>.stats{grid-column:2;grid-row:1/span 2;display:grid;grid-template-columns:1fr;margin:0;gap:12px}
+  .results>.stats>div:nth-child(n){justify-content:flex-start;padding:18px 20px;gap:14px}
+  .results>.stats .stat-icon{display:block;font-size:28px}
+  .results>.stats span:not(.stat-icon){min-height:0;font-size:13px}
+  .results>.stats strong{font-size:27px}
+  .results>.stats small{font-size:13px}
+  .results>.info-rail{grid-column:1;grid-row:3}
+  .results>.details-row{grid-column:1/-1;margin:0}
+  .map-wrap{height:auto;aspect-ratio:2/1}
+  .map-heading{padding:18px 24px 0}.map-heading h2{font-size:22px}
+}
+@media(max-width:1399px){.info-rail{margin-top:12px}.info-rail .journey-panels{grid-template-columns:repeat(2,minmax(0,1fr))}.info-rail .aircraft-position-bar{grid-column:1/-1}.info-rail .aircraft-position-bar .panel-hero{padding-bottom:10px}}
+@media(max-width:850px){.map-card .sky-title{flex-direction:column;align-items:flex-start;gap:4px}.map-card .sky-cards strong{font-size:15px}.map-card .sky-cards small{font-size:12px}}
+@media(max-width:720px){main{padding-left:4%;padding-right:4%}.map-card .sky-panel{padding:13px 18px}.map-card .sky-cards{gap:10px}.map-card .sky-cards>div+div{padding-left:10px}.map-card .sky-icon{font-size:22px}.map-card .sky-cards b span{font-size:12px}.info-rail .journey-panels{grid-template-columns:1fr}.info-rail .journey-panel{padding:16px 18px}.info-rail .panel-hero>strong,.info-rail .eta-line>strong{font-size:34px}}
+/* SimBrief source selection and synchronized planned-altitude profile. */
+.planner fieldset{border:0;padding:0;margin:0;min-width:0;grid-column:1/-1}
+.source-switch{display:flex;gap:4px;padding:4px;border:1px solid #d6e0d2;border-radius:6px;background:#edf2e7;margin:18px 0}
+.source-switch button{flex:1;border:0;border-radius:4px;padding:10px 8px;background:none;color:#506e5f;font-size:14px;font-weight:600}
+.source-switch button[aria-pressed=true]{background:#214e4b;color:#fff}
+.simbrief-panel p{font-size:13px;line-height:1.65;color:#5b7567}.simbrief-panel .primary{margin-top:14px}
+.simbrief-panel select{width:100%;border:1px solid #dbe1d9;background:white;color:#284c45;border-radius:5px;padding:10px}
+.import-file-row{display:flex;gap:8px;margin:10px 0}.import-file-row button{width:100%;font-size:13px}
+#simbriefError{color:#9c4133;font-size:13px;margin-top:10px}
+#simbriefSummary{border-top:1px solid #dce4d6;margin-top:15px;padding-top:15px}
+#simbriefFlight{font-size:16px;line-height:1.5;display:block;margin-bottom:8px}
+#simbriefSummary p{margin-top:7px;font-size:12px}
+#simbriefWarnings{font-size:12px;line-height:1.65;color:#7b603f;padding-left:18px;margin:12px 0}
+#resetSimbriefTime{width:100%;padding:9px 8px;font-size:12px;margin-top:10px}
+.direct-fallback{display:flex;align-items:flex-start;gap:9px;text-transform:none;font-size:13px!important;letter-spacing:0!important;font-weight:400;line-height:1.5}
+.direct-fallback input,.route-comparison input{width:15px!important;height:15px!important;min-height:0!important;margin:3px 0;accent-color:#d4b96d;flex-shrink:0}
+.route-comparison{display:flex;justify-content:space-between;align-items:center;gap:10px 20px;flex-wrap:wrap;padding:13px 24px 0;color:#c8ddd1;font-size:12px;line-height:1.6}
+.route-comparison label{display:flex;align-items:center;gap:7px;margin:0;font-size:12px;font-weight:400;letter-spacing:0;color:#dcebe0;cursor:pointer}
+.route-comparison label:before{content:'';width:20px;border-top:2px dashed #9ccad1}
+.profile-panel{margin-top:15px;border:1px solid #dce5d5;border-radius:7px;background:#f4f6ef;overflow:hidden;color:#355a50}
+.profile-panel summary{display:flex;justify-content:space-between;align-items:center;gap:10px;padding:11px 14px;font-size:14px;font-weight:600}
+.profile-panel summary:before{content:'▾';margin-right:0}.profile-panel:not([open]) summary:before{content:'▸'}
+.profile-panel summary span{margin-left:auto;font-size:11px;font-weight:400;color:#637c6c}
+.profile-readout{padding:0 14px 9px;min-height:28px;font-size:12px;line-height:1.6;font-variant-numeric:tabular-nums}
+.profile-chart{height:185px;position:relative;touch-action:none}
+#profileCanvas{width:100%;height:185px}
+#profileScrub{position:absolute;top:10px;bottom:22px;left:48px;width:calc(100% - 62px);height:calc(100% - 32px);margin:0;opacity:0;cursor:ew-resize;touch-action:none}
+.profile-chart:focus-within{outline:2px solid #87a68c;outline-offset:-2px}
+.profile-panel p{font-size:11px;line-height:1.5;padding:4px 14px 10px;margin:0;max-width:none}
+@media(max-width:720px){.source-switch{margin:14px 0}.simbrief-panel{width:100%}.profile-panel summary{align-items:flex-start;flex-wrap:wrap;gap:5px}.profile-panel summary span{width:100%;margin-left:0}.route-comparison{padding:12px 18px 0}.profile-chart,#profileCanvas{height:175px}.profile-readout{font-size:12px}}
+
+#saveSimbriefPlan{width:100%;padding:9px 8px;font-size:12px;margin-top:8px}
+
+.simulation-notice{padding:12px 24px;background:#f8ecc8;color:#655228;font-size:13px;line-height:1.6;border-bottom:1px solid #d5bd7c}
+
+/* Compact desktop map with its full 2:1 view, and a visible route-swap action. */
+.swap-row{margin:16px 0 7px}
+.swap-row button{width:100%;min-height:44px;display:flex;align-items:center;justify-content:center;gap:9px;padding:10px 8px;background:#e2ecdc;border:1px solid #9fb596;border-radius:6px;color:#244f42;font-size:13px;font-weight:700;box-shadow:0 2px 3px #214e4b0c}
+.swap-row button span{font-size:22px;line-height:1;font-weight:500}
+.swap-row button:hover{background:#d4e4cc;border-color:#76956c}
+.swap-row button:active{background:#c8dbbf;transform:translateY(1px)}
+@media(min-width:721px){
+ header{height:78px}
+ main{max-width:1480px;padding-top:24px}
+ .intro{margin-bottom:20px}
+ .intro h1{font-size:38px;margin-top:6px;margin-bottom:6px}
+ .map-wrap{height:auto;aspect-ratio:2/1}
+ .map-heading{padding:16px 21px 0}
+ .map-heading h2{font-size:21px}
+ .map-card .sky-panel{padding:10px 21px}
+ .map-card .sky-cards{margin-top:7px}
+ .map-footer{padding:9px 21px}
+}
+@media(min-width:1400px){
+ .workspace{grid-template-columns:280px minmax(0,1fr);gap:20px}
+ .planner{padding:20px}
+ .results{grid-template-columns:minmax(0,1fr) 200px;column-gap:16px}
+ .results>.stats>div:nth-child(n){padding:15px 16px;gap:11px}
+ .results>.stats strong{font-size:25px}
+}
+@media(max-width:720px){.swap-row{margin:14px 0 4px}.swap-row button{font-size:14px;min-height:46px}}
+
+/* Keep journey clocks beside the map; playback and light totals stay below it. */
+@media(min-width:1400px){
+ .results{grid-template-columns:minmax(0,1fr) 300px}
+ .results>.timeline-card{grid-column:1;grid-row:2;padding:19px 23px}
+ .results>.info-rail{grid-column:2;grid-row:1/span 3;margin:0}
+ .info-rail .journey-panels{grid-template-columns:1fr;gap:12px}
+ .info-rail .journey-panel{padding:16px 18px}
+ .info-rail .panel-hero{padding-top:12px;padding-bottom:12px}
+ .info-rail .panel-hero>strong,.info-rail .eta-line>strong{font-size:34px}
+ .results>.stats{grid-column:1;grid-row:3;grid-template-columns:repeat(5,minmax(0,1fr));gap:8px}
+ .results>.stats>div:nth-child(n){justify-content:center;flex-direction:column;padding:14px 8px;gap:7px;text-align:center}
+ .results>.stats .stat-icon{display:block;font-size:27px;line-height:1;min-height:28px}
+ .results>.stats span:not(.stat-icon){font-size:12px;min-height:36px}
+ .results>.stats strong{font-size:22px}
+ .results>.stats small{font-size:12px}
+}
