@@ -320,3 +320,16 @@ main{max-width:2040px;padding-left:3%;padding-right:3%}
 .taxi-row{display:grid;grid-template-columns:auto 1fr auto 1fr;align-items:center;gap:8px}
 .taxi-row span{font-size:12px;color:#6d8278}
 .direct-swatch{border-top-color:#d5e0c5!important}
+
+/* Destination hero: landing and on-block (ETA) side by side at equal size when taxi times are known */
+.hero-split{display:flex;flex-direction:column;gap:8px}
+.hero-split.split{display:grid;grid-template-columns:1fr 1fr;gap:14px}
+.hero-split>div{display:flex;flex-direction:column;gap:6px;min-width:0}
+.hero-split.split .eta-line>strong{font-size:32px;letter-spacing:-.6px}
+.hero-split.split .eta-line{flex-wrap:wrap;gap:4px 6px}
+.hero-split [hidden]{display:none}
+#originTakeoffCell[hidden]{display:none}
+
+.hero-split.split .eta-line{flex-wrap:nowrap;align-items:center}
+.hero-split.split .eta-line>strong{font-size:30px}
+.hero-split.split .day-change{font-size:11px;padding:2px 5px;line-height:1.3}
