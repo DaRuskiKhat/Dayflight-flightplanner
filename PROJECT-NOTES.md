@@ -20,9 +20,10 @@ Last updated: 5 November 2026.
 - Great-circle route with constant ground speed, sampled every 30 seconds for daylight, three twilight stages and night. No wind, taxi or aircraft performance model.
 - Scrubbing/playback, zoom/pan/reset, center/follow aircraft, smooth day/night map shading.
 - Sun/Moon aircraft-relative positions in the map card footer, plus overhead map markers.
-- Desktop layout is capped at 1480px with reduced header/intro spacing so the full 2:1 map is shorter without cropping or stretching. At 1400px and wider, origin, destination and aircraft clock cards stack in a 300px right-hand column. Playback stays at the map width; daylight/twilight/night totals sit in a five-card row below playback, with the sun/twilight/moon icons above their labels to preserve readable text. Smaller screens stack responsively.
+- Desktop layout is capped at 1880px (raised from 1480px on 5 Nov 2026 so the map and playback cards fill wide screens; the map stays exactly 2:1, so it grows without stretching or cropping) with reduced header/intro spacing so the full 2:1 map is shorter without cropping or stretching. At 1400px and wider, origin, destination and aircraft clock cards stack in a 300px right-hand column. Playback stays at the map width; daylight/twilight/night totals sit in a five-card row below playback, with the sun/twilight/moon icons above their labels to preserve readable text. Smaller screens stack responsively.
 - Map projection uses the same pixels per degree on both axes; wide/tall viewports crop rather than stretch. Map picking, shading, follow and wraparound share this scale.
 - The redundant midpoint duration beneath the scrubber is removed; UTC crossing buttons remain.
+- Map controls sit in a single column: zoom in, zoom out, center on aircraft, follow aircraft, reset, zoom factor.
 - Large ETA with local calendar day difference badge. Aircraft clock estimates regional time zone independently of endpoint overrides.
 - Local plan saving, share URLs, CSV export; offline HTML supports plan JSON save/load.
 - Polar map edges preserve the full South Pole boundary so Antarctica fills toward the bottom of the map.
