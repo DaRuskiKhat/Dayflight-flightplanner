@@ -282,3 +282,24 @@ main{max-width:2040px;padding-left:3%;padding-right:3%}
  .timeline-title{grid-area:title}.timeline-meta{grid-area:meta}.transport{grid-area:transport;justify-self:center;column-gap:22px}
  .timeline-meta .right{display:none}
 }
+
+/* Map settings popover (gear button in the map controls) */
+.map-settings{position:absolute;top:12px;right:53px;z-index:3;width:212px;padding:12px 13px;border:1px solid #638a86;border-radius:6px;background:#0f343ef7;color:#e3ecdc;box-shadow:0 8px 22px #0006;font-size:12px}
+.settings-title{font-size:9px;letter-spacing:1.4px;text-transform:uppercase;color:#9fc0b8;margin-bottom:10px}
+.setting{display:flex;align-items:center;justify-content:space-between;gap:10px;margin-bottom:10px}
+.setting[hidden],.setting-check[hidden]{display:none}
+.setting-label{color:#c8ddd1}
+.seg{display:flex;border:1px solid #4f7774;border-radius:4px;overflow:hidden}
+.seg button{border:0;border-radius:0;background:transparent;color:#cfe0d6;font-size:11px;padding:5px 8px;min-width:32px;line-height:1.2}
+.seg button+button{border-left:1px solid #4f7774}
+.seg button[aria-pressed=true]{background:#486b55;color:#fff0b7}
+.seg button:hover:not([aria-pressed=true]){background:#1d4a52}
+.setting-check{display:flex;align-items:center;gap:8px;margin:2px 0 0;font-size:12px;font-weight:400;letter-spacing:0;color:#dcebe0;cursor:pointer}
+.setting-check input{width:15px!important;height:15px!important;min-height:0!important;margin:0;accent-color:#d4b96d;flex-shrink:0}
+.direct-swatch{width:18px;border-top:2px dashed #9ccad1}
+.map-navigation #mapSettingsButton[aria-expanded=true]{background:#2e5d60;border-color:#e3c482}
+.alt-legend{display:flex;align-items:center;gap:6px}
+.alt-ramp{display:inline-block;width:46px;height:5px;border-radius:3px;background:linear-gradient(90deg,rgb(214,226,84),rgb(74,160,245) 30%,rgb(206,92,232) 65%,rgb(242,84,84))}
+@media(max-width:720px){.map-settings{top:10px;right:44px;width:min(212px,calc(100% - 60px))}}
+
+.map-legend .alt-ramp{width:46px;height:5px;border-radius:3px;flex-shrink:0}
