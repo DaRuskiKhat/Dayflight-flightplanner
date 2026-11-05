@@ -24,7 +24,8 @@ Last updated: 5 November 2026.
 - Map projection uses the same pixels per degree on both axes; wide/tall viewports crop rather than stretch. Map picking, shading, follow and wraparound share this scale.
 - The redundant midpoint duration beneath the scrubber is removed; UTC crossing buttons remain.
 - Map controls sit in a single column: zoom in, zoom out, telemetry toggle (altitude, ground speed and true track tag beside the aircraft; altitude-coloured route for SimBrief profiles), follow aircraft, reset, settings (gear), zoom factor.
-- Settings popover: speed unit (kt/km/h/mph, shared `speedUnit` with the planner), altitude unit (ft/m, SimBrief only, `dayflight-altunit`) and direct great-circle overlay (`#showDirect`, SimBrief routes only; moved out of the route-comparison row). Center on aircraft was removed on 5 Nov 2026 (Follow covers it).
+- Settings popover: speed unit (kt/km/h/mph, shared `speedUnit` with the planner), altitude unit (ft/m, SimBrief only, `dayflight-altunit`) and direct great-circle overlay (`#showDirect`, SimBrief routes only; moved out of the route-comparison row). Telemetry checkboxes (altitude, ground speed, track, altitude colouring) persist in `dayflight-telemetry`.
+- Altitude colour scale (`ALT_STOPS` in app.js, metres): 100 m pale yellow … 13,000 m red, interpolated; only the flown route is coloured. Center on aircraft was removed on 5 Nov 2026 (Follow covers it).
 - Playback: play button centred at the top of the time-travel card with «/» rate steps (1×–3600× real time, default 600×) replacing the old 30 s / 1 min / 2 min duration select. Rate and flight-data toggle persist in localStorage (`dayflight-rate`, `dayflight-flightdata`).
 - Large ETA with local calendar day difference badge. Aircraft clock estimates regional time zone independently of endpoint overrides.
 - Local plan saving, share URLs, CSV export; offline HTML supports plan JSON save/load.

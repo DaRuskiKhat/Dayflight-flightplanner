@@ -303,3 +303,8 @@ main{max-width:2040px;padding-left:3%;padding-right:3%}
 @media(max-width:720px){.map-settings{top:10px;right:44px;width:min(212px,calc(100% - 60px))}}
 
 .map-legend .alt-ramp{width:46px;height:5px;border-radius:3px;flex-shrink:0}
+
+.settings-sub{margin:14px 0 4px;padding-top:11px;border-top:1px solid #ffffff1a}
+.settings-hint{margin:0 0 8px;font-size:10px;line-height:1.4;color:#8fb0a8}
+.map-settings .setting-check+.setting-check{margin-top:7px}
+.map-legend .alt-ramp{width:64px}
