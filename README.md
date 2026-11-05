@@ -25,7 +25,7 @@ Coordinates accept decimal latitude/longitude or DMS with hemisphere letters (pr
 
 Run verification with `node check.cjs` and syntax checking with `node --check dist/app.js`.
 
-Map navigation: use +/− for 1×–8× zoom, drag to pan while zoomed, and ↺ to reset. After focusing the map, the wheel zooms around the pointer; +/−/0 and arrow keys support keyboard navigation. Map picking, routes, celestial markers and night shading use the same zoom transform.
+Map navigation: use +/− for 1×–16× zoom, drag to pan while zoomed, and ↺ to reset. After focusing the map, the wheel zooms around the pointer; +/−/0 and arrow keys support keyboard navigation. Map picking, routes, celestial markers and night shading use the same zoom transform.
 
 Follow aircraft (✈) tracks the aircraft during playback and scrubbing. The flight-data toggle (chart icon) shows a tag beside the aircraft with planned altitude (SimBrief plans with a vertical profile; ↑/↓ while climbing or descending) and ground speed, averaged over ±1 minute of the timed route, in the selected speed unit (knots by default). The tag also shows true track (TRK, the ground track along the timed route; heading would need wind data). Manual plans show ground speed and track only. While the tag is on, the flown part of SimBrief routes with a vertical profile is coloured by planned altitude on a rainbow scale (pale yellow below 100 m → yellow → green → cyan → blue → violet → magenta → red at 13,000 m / about 43,000 ft); the unflown part stays the plain dotted planned line. A ramp appears in the map legend. Settings → Telemetry has checkboxes for each item (altitude, ground speed, track, route colouring); the chart button is the master on/off. The toggle is remembered per browser.
 

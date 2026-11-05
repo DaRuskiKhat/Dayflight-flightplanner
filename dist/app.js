@@ -1,7 +1,7 @@
 'use strict';
 const $=id=>document.getElementById(id),R=Math.PI/180,COLORS={day:'#eabe61',civil:'#d5a38c',nautical:'#9b8cae',astronomical:'#647c9f',night:'#29465f'},CATS=['day','civil','nautical','astronomical','night'],LIGHT_NAMES={day:'Daylight',civil:'Civil twilight',nautical:'Nautical twilight',astronomical:'Astronomical twilight',night:'Night'};
 let airports=[],land=null,flight=null,progress=0,playing=false,lastFrame=0,picking=null,custom=null,customFrom=null,center=0,speedUnit='knots',mapZoom=1,mapPanX=0,mapPanY=0,mapPanDrag=null,followAircraft=false,playbackRate=600,showFlightData=false,altUnit='ft',telemetry={alt:true,gs:true,trk:true,colour:true};
-const PLAYBACK_RATES=[1,10,30,60,120,300,600,1200,1800,3600],SPEED_LABELS={knots:'kt',kmh:'km/h',mph:'mph'};
+const MAX_MAP_ZOOM=16,PLAYBACK_RATES=[1,10,30,60,120,300,600,1200,1800,3600],SPEED_LABELS={knots:'kt',kmh:'km/h',mph:'mph'};
 const canvas=$('map'),ctx=canvas.getContext('2d');
 
 let dateDraft='',calendarView=null;
@@ -120,9 +120,9 @@ function mapWorldWidth(w,h){return mapScale(w,h)*360;}
 function screenWorldPoint(x,y,w,h){return {x:(x-w/2-mapPanX)/mapZoom+w/2,y:(y-h/2-mapPanY)/mapZoom+h/2};}
 function mapCoordinatesAt(x,y,w,h){const world=screenWorldPoint(x,y,w,h);return {lat:Math.max(-90,Math.min(90,(h/2-world.y)/mapScale(w,h))),lon:wrapLongitude((world.x-w/2)/mapScale(w,h)+center)};}
 function clampMapPan(w=canvas.clientWidth,h=canvas.clientHeight){const scale=mapScale(w,h),mx=Math.max(0,(360*scale*mapZoom-w)/2),my=Math.max(0,(180*scale*mapZoom-h)/2);mapPanX=Math.max(-mx,Math.min(mx,mapPanX));mapPanY=Math.max(-my,Math.min(my,mapPanY));}
-function updateMapControls(){$('zoomIn').disabled=mapZoom>=8;$('zoomOut').disabled=mapZoom<=1;$('zoomLevel').textContent=`${Number(mapZoom.toFixed(1))}×`;canvas.style.cursor=picking?'crosshair':mapZoom>1?'grab':'default';$('followAircraft').setAttribute('aria-pressed',String(followAircraft));$('flightData').setAttribute('aria-pressed',String(showFlightData));$('flightData').setAttribute('aria-label',showFlightData?'Hide altitude and ground speed':'Show altitude and ground speed');}
+function updateMapControls(){$('zoomIn').disabled=mapZoom>=MAX_MAP_ZOOM;$('zoomOut').disabled=mapZoom<=1;$('zoomLevel').textContent=`${Number(mapZoom.toFixed(1))}×`;canvas.style.cursor=picking?'crosshair':mapZoom>1?'grab':'default';$('followAircraft').setAttribute('aria-pressed',String(followAircraft));$('flightData').setAttribute('aria-pressed',String(showFlightData));$('flightData').setAttribute('aria-label',showFlightData?'Hide altitude and ground speed':'Show altitude and ground speed');}
 function resetMapView(redraw=true){followAircraft=false;if(flight)center=routePoint(.5).lon;mapZoom=1;mapPanX=mapPanY=0;updateMapControls();if(redraw)update();}
-function zoomMap(factor,x=canvas.clientWidth/2,y=canvas.clientHeight/2){const w=canvas.clientWidth,h=canvas.clientHeight,world=screenWorldPoint(x,y,w,h);mapZoom=Math.max(1,Math.min(8,mapZoom*factor));mapPanX=x-w/2-(world.x-w/2)*mapZoom;mapPanY=y-h/2-(world.y-h/2)*mapZoom;clampMapPan(w,h);updateMapControls();update();}
+function zoomMap(factor,x=canvas.clientWidth/2,y=canvas.clientHeight/2){const w=canvas.clientWidth,h=canvas.clientHeight,world=screenWorldPoint(x,y,w,h);mapZoom=Math.max(1,Math.min(MAX_MAP_ZOOM,mapZoom*factor));mapPanX=x-w/2-(world.x-w/2)*mapZoom;mapPanY=y-h/2-(world.y-h/2)*mapZoom;clampMapPan(w,h);updateMapControls();update();}
 
 function project(lon,lat,w,h){const scale=mapScale(w,h)*mapZoom;return [wrapLongitude(lon-center)*scale+w/2+mapPanX,-lat*scale+h/2+mapPanY];}
 
