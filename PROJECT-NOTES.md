@@ -4,6 +4,7 @@ Last updated: 5 November 2026.
 
 ## Project
 
+- Public site: https://dayflight-flightplanner.pages.dev/ (Cloudflare Pages project `dayflight-flightplanner`, auto-deploys `dist` from `main` of https://github.com/DaRuskiKhat/Dayflight-flightplanner; no build command).
 - Previous public site (ChatGPT hosting, retiring 2027): https://daylight-flight-planner-nw.spunkyconch.chatgpt.site/
 - Buildless application: `dist/index.html`, `dist/style.css`, `dist/app.js`.
 - Hosting: any static host serving `dist` (no build step, no server). Deploy options for GitHub Pages and Cloudflare Pages are in README.md under Hosting. The OpenAI `.openai/hosting.json` binding was removed on 5 November 2026.

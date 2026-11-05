@@ -1,6 +1,6 @@
 # Dayflight
 
-A buildless flight daylight planner. Serve `dist` with any static HTTP server.
+A buildless flight daylight planner. Live at **https://dayflight-flightplanner.pages.dev/**. Serve `dist` with any static HTTP server.
 
 ## Hosting
 
