@@ -13,8 +13,11 @@ out=Path(args.output).resolve()
 out.mkdir(parents=True,exist_ok=True)
 dist=root/'dist'
 html=(dist/'index.html').read_text(encoding='utf-8')
+html=re.sub(r'<link rel="preload"[^>]*>','',html)
 css=(dist/'style.css').read_text(encoding='utf-8')
 css=re.sub(r'@import\s+url\([^;]+;\s*','',css)
+import base64
+css=re.sub(r"url\('fonts/([^']+)'\) format\('woff'\)",lambda m:"url('data:font/woff;base64,"+base64.b64encode((dist/'fonts'/m.group(1)).read_bytes()).decode()+"') format('woff')",css)
 css+='\n.offline-actions{display:flex;gap:7px}.offline-actions button{font-size:11px}header{height:auto;min-height:91px;gap:12px;flex-wrap:wrap;padding-top:16px;padding-bottom:16px}.brand-sub{display:none}@media(max-width:720px){header{min-height:73px}.offline-actions{margin-left:auto}.offline-actions button{padding:8px 10px}}'
 app=(dist/'app.js').read_text(encoding='utf-8')
 vendor=(dist/'vendor/suncalc.js').read_text(encoding='utf-8')
@@ -59,7 +62,7 @@ readme='''DAYFLIGHT — LOCAL / OFFLINE COPY
 
 All airport data, the world map, styles, scripts and SunCalc are embedded in the HTML.
 SimBrief is contacted only when you click Import latest flight. OFP file import needs no connection.
-Online documentation links only open if you choose them. Fonts use local fallbacks.
+Online documentation links only open if you choose them. Fonts (DM Sans, Manrope; OFL) are embedded.
 Browser-saved plans are local to that browser; they do not sync between devices.
 This is a snapshot of the app. It does not automatically receive hosted-site updates.
 Some phones or email previewers do not execute local HTML; open it in a full browser.
@@ -76,6 +79,7 @@ DATA / LICENSES
 Dayflight code: MIT; see source/LICENSE.
 Airport data: https://github.com/mwgg/Airports, MIT, (c) 2014 mwgg; see source/dist/vendor/airports-LICENSE.txt.
 Natural Earth map data: public domain.
+Fonts: DM Sans and Manrope, SIL Open Font License 1.1; see source/dist/fonts/*-OFL.txt.
 SunCalc 2.1.1: MIT; see source/dist/vendor/suncalc-LICENSE.txt.
 Time-zone lookup: @photostructure/tz-lookup 11.7.0, CC0; see source/dist/vendor/tz-lookup-LICENSE.txt.
 

@@ -28,3 +28,6 @@ libraries keep their own licences:
 - dist/land.json: Natural Earth, public domain
 - dist/vendor/suncalc.js: SunCalc, MIT (see dist/vendor/suncalc-LICENSE.txt)
 - dist/vendor/tz-lookup.js: @photostructure/tz-lookup, CC0 (see dist/vendor/tz-lookup-LICENSE.txt)
+- dist/fonts/dm-sans-var.woff, dist/fonts/manrope-var.woff: DM Sans and Manrope,
+  SIL Open Font License 1.1 (see dist/fonts/DMSans-OFL.txt, dist/fonts/Manrope-OFL.txt);
+  Latin subsets of the variable fonts from github.com/google/fonts
