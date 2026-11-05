@@ -37,4 +37,13 @@ assert.equal(portable.from,'YSSY');assert.equal(portable.to,'KLAX');assert.equal
 assert(!JSON.stringify(portable).includes('hidden-manual-draft'));assert(!Object.hasOwn(portable,'manualDraft'));
 vm.runInContext("inputSource='manual'",context);
 portable=JSON.parse(vm.runInContext('JSON.stringify(planState(true))',context));assert.equal(portable.simbrief,null);
-console.log('Passed: SimBrief takeoff/taxi fallbacks, XML-style numeric and JSON-v2 times, timed route/date-line interpolation, altitude gaps, missing routes, invalid data and saved-plan validation.');
+
+// Navlog telemetry: leg values from the fix ending the leg, wind/OAT from the nearest fix, fuel interpolated from takeoff fuel.
+assert.equal(plan.telemetryAvailable,false);assert.equal(SimBrief.telemetryAt(plan,.5),null);
+{const t=clone();t.params.units='kgs';t.fuel={plan_takeoff:'50000',plan_landing:'8000'};Object.assign(t.navlog[0],{heading_true:'092',track_true:'090',true_airspeed:'480',mach_thousandths:'0.830',groundspeed:'510',wind_dir:'270',wind_spd:'30',oat:'-52',fuel_plan_onboard:'40000'});
+ const tp=SimBrief.parse(t),fix=tp.fixes[1];assert.equal(tp.telemetryAvailable,true);assert.equal(tp.fuelUnits,'kg');assert.equal(fix.hdg,92);assert.equal(fix.mach,.83);assert.equal(fix.oat,-52);
+ const at=SimBrief.telemetryAt(tp,fix.elapsed/tp.durationSec*.9);assert.equal(at.hdg,92);assert.equal(at.gs,510);assert.equal(at.windSpd,30);assert(at.fuel<50000&&at.fuel>40000,'fuel interpolates between takeoff and first fix');
+ assert.equal(SimBrief.telemetryAt(tp,1).fuel,8000);
+ const saved=SimBrief.validate(JSON.parse(JSON.stringify(tp)));assert.equal(saved.telemetryAvailable,true);assert.equal(saved.fixes[1].hdg,92);
+ const bad=JSON.parse(JSON.stringify(tp));bad.fixes[1].oat=999;assert.equal(SimBrief.validate(bad).fixes[1].oat,null);}
+console.log('Passed: SimBrief takeoff/taxi fallbacks, XML-style numeric and JSON-v2 times, timed route/date-line interpolation, altitude gaps, missing routes, invalid data and saved-plan validation, navlog telemetry.');
