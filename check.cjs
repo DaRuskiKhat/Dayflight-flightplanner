@@ -6,6 +6,7 @@ vm.runInContext(fs.readFileSync('dist/vendor/tz-lookup.js','utf8'),context);
 vm.runInContext(script,context);
 const run=code=>vm.runInContext(code,context);
 assert.equal(run("arrivalDayDelta(Date.parse('2026-11-05T05:00:00Z'),23.5*3600000,'Australia/Sydney','Europe/London')"),1);
+assert.equal(run('horizonDip(0)'),0);assert.equal(run('horizonDip(null)'),0);assert.ok(Math.abs(run('horizonDip(36000)')-3.07)<.05,'horizon dip at 36,000 ft ≈ 3.07°');assert.ok(Math.abs(run('horizonDip(10000)')-1.62)<.05,'horizon dip at 10,000 ft ≈ 1.62°');
 assert.equal(run("arrivalDayDelta(Date.parse('2026-11-06T06:00:00Z'),15*3600000,'America/Los_Angeles','Australia/Sydney')"),2);
 assert.equal(run("arrivalDayDelta(Date.parse('2026-11-05T10:00:00Z'),2*3600000,'Europe/London','Europe/London')"),0);
 assert.equal(run("arrivalDayDelta(Date.parse('2026-11-05T14:00:00Z'),2*3600000,'Pacific/Apia','Pacific/Honolulu')"),-1);
