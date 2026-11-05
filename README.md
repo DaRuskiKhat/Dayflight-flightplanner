@@ -14,7 +14,7 @@ There is no build step and no server code: publish the `dist` folder as-is. SimB
 
 **GitHub Pages (repo must be public on the free plan)**
 
-- Push this folder to a public GitHub repo. In the repo go to Settings → Pages → Build and deployment and set Source to *GitHub Actions*. The included workflow `.github/workflows/pages.yml` publishes `dist` on every push to `main`.
+- Push this folder to a public GitHub repo. In the repo go to Settings → Pages → Build and deployment and set Source to *GitHub Actions*. The included workflow `.github/workflows/pages.yml` publishes `dist`; it is manual-only while Cloudflare Pages is the main host (run it from the Actions tab, or add a `push` trigger to make it automatic).
 - The site will be at `https://<username>.github.io/<repo>/`. All asset paths are relative, so the sub-path works without changes.
 
 Saved plans live in each browser's local storage, which is tied to the site address, so plans saved on the old ChatGPT-hosted address won't appear on the new one. Use Share or Save imported flight on the old site to carry a plan across.

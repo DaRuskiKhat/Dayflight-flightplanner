@@ -1,8 +1,9 @@
 name: Deploy to GitHub Pages
 
+# Optional backup host. Hosting is on Cloudflare Pages, so this only runs when
+# started by hand (Actions tab -> Deploy to GitHub Pages -> Run workflow).
+# To make GitHub Pages the main host, add back:  push: { branches: [main] }
 on:
-  push:
-    branches: [main]
   workflow_dispatch:
 
 permissions:
