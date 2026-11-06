@@ -311,7 +311,7 @@ main{max-width:2040px;padding-left:3%;padding-right:3%}
 .map-settings .setting-check+.setting-check{margin-top:7px}
 .map-legend .alt-ramp{width:64px}
 
-.site-legal{margin:-6px 0 34px;font-size:11px;line-height:1.6;color:#7d8f80;max-width:1100px}
+.site-legal{margin:22px 0 34px;font-size:11px;line-height:1.6;color:#7d8f80;max-width:1100px}
 .site-legal a{color:#4f6f5c;text-decoration:underline;text-underline-offset:2px}
 
 .phase-mark{position:absolute;top:13px;width:2px;height:18px;margin-left:-1px;background:#fffef9;box-shadow:0 0 0 1px #244b4566;border-radius:1px;pointer-events:none;z-index:1}
