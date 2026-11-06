@@ -8,6 +8,10 @@ When taxi times are known, the timeline runs from off-block (push-back) to on-bl
 
 Route colours: the unflown SimBrief route is gold dashed; the direct great-circle (manual route, and the SimBrief direct overlay) is pale dashed. The wind line in the telemetry tag has an arrow pointing the way the wind blows.
 
+## Airport weather (experimental branch)
+
+On the `experimental` branch (preview: https://experimental.dayflight-flightplanner.pages.dev/), SimBrief imports show Origin weather and Destination weather cards beside the airport cards (two columns on wide screens; the map narrows while they show). Each card decodes the OFP's METAR (wind, visibility, ceiling, temperature/dew point, QNH) with a VFR/MVFR/IFR/LIFR badge (SimBrief's category, FAA thresholds), and the TAF conditions forecast at off-block (origin) or on-block ETA (destination): prevailing conditions after FM/BECMG changes, plus any TEMPO/PROB spells covering that time. Raw METAR/TAF text is collapsible. Weather is the OFP snapshot at planning time, not live; decoding is in `dist/weather.js` (tests: `check-weather.cjs`). Saved plan files keep the weather; share links leave it out.
+
 ## Hosting
 
 There is no build step and no server code: publish the `dist` folder as-is. SimBrief is called directly from the viewer's browser, so live import works on any static host.

@@ -342,3 +342,28 @@ main{max-width:2040px;padding-left:3%;padding-right:3%}
 .time-icon{width:46px;flex-shrink:0;border:0;border-left:1px solid #e3e8df;border-radius:0;background:#f6f8f3;color:#658078;font-size:22px;padding:0;display:grid;place-items:center;cursor:pointer}
 .time-icon:hover,.time-icon[aria-expanded=true]{background:#e9efe4;color:#214e4b}
 .visually-hidden{position:absolute!important;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+
+/* Airport weather cards (experimental): beside the origin/destination cards */
+.wx-panel[hidden]{display:none}
+.wx-panel{background:#fafbf6}
+.wx-body{padding-top:10px;display:flex;flex-direction:column;gap:6px}
+.wx-head{display:flex;align-items:center;justify-content:space-between;gap:8px;padding-top:6px}
+.wx-forecast{margin-top:6px;padding-top:12px;border-top:1px solid #e0e7d9}
+.wx-title{font-size:12px;color:#5e7768;line-height:1.4}
+.wx-badge{display:inline-block;flex-shrink:0;font:700 10.5px/1 Manrope,sans-serif;letter-spacing:.6px;padding:4px 7px;border-radius:4px;color:#fff;margin-right:6px}
+.wx-head .wx-badge{margin-right:0}
+.wx-vfr{background:#2c8a50}.wx-mvfr{background:#2b63c6}.wx-ifr{background:#c43a2f}.wx-lifr{background:#a530a8}.wx-none{background:#8a9a90}
+.wx-rows{display:grid;grid-template-columns:auto 1fr;gap:3px 12px;margin:2px 0 0;font-size:13px}
+.wx-rows dt{color:#6d8278}.wx-rows dd{margin:0;color:#193e40;font-variant-numeric:tabular-nums;text-align:right}
+.wx-note,.wx-spell{margin:2px 0 0;font-size:12px;color:#4f6a5f;line-height:1.45}
+.wx-spell{font-family:ui-monospace,SFMono-Regular,Menlo,monospace;font-size:11.5px;display:flex;align-items:center;flex-wrap:wrap}
+.wx-raw{margin-top:8px;font-size:12px;color:#4f6a5f}
+.wx-raw summary{cursor:pointer}
+.wx-raw pre{white-space:pre-wrap;word-break:break-word;font:11.5px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;background:#eef2e8;border-radius:5px;padding:7px 9px;margin:6px 0 0;color:#244b45}
+.wx-foot{margin:6px 0 0;font-size:10.5px;color:#869a90;line-height:1.4}
+@media(min-width:1400px){
+ .results.has-wx{grid-template-columns:minmax(0,1fr) 612px}
+ .info-rail.has-wx .journey-panels{grid-template-columns:1fr 1fr}
+ .info-rail.has-wx .aircraft-position-bar{grid-column:1/-1}
+}
+@media(max-width:1399px){.info-rail.has-wx .aircraft-position-bar{grid-column:1/-1}}

@@ -28,6 +28,7 @@ jobs:
           node --check dist/app.js
           node check.cjs
           node check-simbrief.cjs
+          node check-weather.cjs
       - uses: actions/configure-pages@v5
       - uses: actions/upload-pages-artifact@v3
         with:

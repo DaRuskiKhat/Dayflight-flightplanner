@@ -45,7 +45,7 @@ for name in ['airports','land']:
     data+=f'<script type="application/json" id="offline-data-{name}">{text}</script>'
 html=html.replace('<script src="vendor/suncalc.js"></script>',data+inline_script(vendor))
 html=html.replace('<script src="vendor/tz-lookup.js"></script>',inline_script((dist/'vendor/tz-lookup.js').read_text(encoding='utf-8')))
-for module_name in ['simbrief','import-ui']:
+for module_name in ['simbrief','weather','import-ui']:
     html=re.sub(r'<script src="'+module_name+r'\.js[^\"]*"></script>',lambda _, name=module_name:inline_script((dist/(name+'.js')).read_text(encoding='utf-8')),html)
 html=re.sub(r'<script src="app\.js[^\"]*"></script>',lambda _:inline_script(app),html)
 assert not re.search(r'<script[^>]+src=',html)
@@ -96,6 +96,6 @@ with zipfile.ZipFile(archive,'w',zipfile.ZIP_DEFLATED,compresslevel=9) as z:
         if file.is_file():z.write(file,'source/dist/'+file.relative_to(dist).as_posix())
     for test_file in sorted((root/'tests').glob('*')):
         if test_file.is_file():z.write(test_file,'source/tests/'+test_file.name)
-    for name in ['README.md','PROJECT-NOTES.md','LICENSE','check.cjs','check-simbrief.cjs','export-offline.py']:
+    for name in ['README.md','PROJECT-NOTES.md','LICENSE','check.cjs','check-simbrief.cjs','check-weather.cjs','export-offline.py']:
         z.write(root/name,'source/'+name)
 print(json.dumps({'html':str(out/'Dayflight-offline.html'),'zip':str(archive),'html_bytes':(out/'Dayflight-offline.html').stat().st_size,'zip_bytes':archive.stat().st_size}))
