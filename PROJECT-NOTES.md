@@ -7,6 +7,7 @@ Last updated: 5 November 2026.
 - Public site: https://dayflight-flightplanner.pages.dev/ (Cloudflare Pages project `dayflight-flightplanner`, auto-deploys `dist` from `main` of https://github.com/DaRuskiKhat/Dayflight-flightplanner; no build command).
 - Previous public site (ChatGPT hosting, retiring 2027): https://daylight-flight-planner-nw.spunkyconch.chatgpt.site/
 - Buildless application: `dist/index.html`, `dist/style.css`, `dist/app.js`.
+- Airport weather cards (SimBrief only): `dist/weather.js` decodes the OFP METAR/TAF (tests `check-weather.cjs`); cards are an extra column right of the origin/destination cards on 1400px+ screens (page widens by 312px), stacked under the map below that. `experimental` branch is the place to trial UI changes (preview at experimental.dayflight-flightplanner.pages.dev).
 - Fonts are self-hosted (`dist/fonts/`, DM Sans + Manrope variable Latin subsets, WOFF, SIL OFL). The site makes no third-party requests except the SimBrief fetch on an explicit Import click. The offline export embeds the fonts as data URIs.
 - Hosting: any static host serving `dist` (no build step, no server). Deploy options for GitHub Pages and Cloudflare Pages are in README.md under Hosting. The OpenAI `.openai/hosting.json` binding was removed on 5 November 2026.
 - Run checks from this directory: `node --check dist/app.js` and `node check.cjs`.
