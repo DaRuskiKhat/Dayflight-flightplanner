@@ -371,3 +371,7 @@ main{max-width:2040px;padding-left:3%;padding-right:3%}
  .info-rail.has-wx .aircraft-position-bar{grid-column:1/-1}
 }
 @media(max-width:1399px){.info-rail.has-wx .aircraft-position-bar{grid-column:1/-1}}
+
+/* Compact layout on large screens (experimental): the whole page at 80% scale, like browser zoom at 80%.
+   Pointer handlers convert screen movement to layout pixels via canvasScale(). */
+@media(min-width:2000px){html{zoom:.8}}

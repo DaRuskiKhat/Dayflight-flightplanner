@@ -12,6 +12,10 @@ Route colours: the unflown SimBrief route is gold dashed; the direct great-circl
 
 On the `experimental` branch (preview: https://experimental.dayflight-flightplanner.pages.dev/), SimBrief imports show Origin weather and Destination weather cards. Everything keeps its main-branch size and the weather cards are added as an extra column to the right of the origin/destination cards (screens 1400px and wider). The page grows by one card column (312px), so on screens narrower than about 2240px it scrolls sideways to reach them; below 1400px they pair up under the map. Each card decodes the OFP's METAR (wind, visibility, ceiling, temperature/dew point, QNH) with a VFR/MVFR/IFR/LIFR badge (SimBrief's category, FAA thresholds), and the TAF conditions forecast at off-block (origin) or on-block ETA (destination): prevailing conditions after FM/BECMG changes, plus any TEMPO/PROB spells covering that time. Raw METAR/TAF text is collapsible. Weather is the OFP snapshot at planning time, not live; decoding is in `dist/weather.js` (tests: `check-weather.cjs`). Saved plan files keep the weather; share links leave it out.
 
+## Compact large-screen layout (experimental branch)
+
+On the `experimental` branch, windows 2000px and wider show the whole page at 80% scale (CSS `zoom`), matching browser zoom at 80%: more fits on screen, and with weather cards the extra column fits without sideways scrolling on a 2560px screen. Map pointer handling converts screen movement to layout pixels (`canvasScale()`), so dragging, wheel-zoom anchoring and map picking stay exact.
+
 ## Hosting
 
 There is no build step and no server code: publish the `dist` folder as-is. SimBrief is called directly from the viewer's browser, so live import works on any static host.
