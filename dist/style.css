@@ -361,10 +361,11 @@ main{max-width:2040px;padding-left:3%;padding-right:3%}
 .wx-raw summary{cursor:pointer}
 .wx-raw pre{white-space:pre-wrap;word-break:break-word;font:11.5px/1.5 ui-monospace,SFMono-Regular,Menlo,monospace;background:#eef2e8;border-radius:5px;padding:7px 9px;margin:6px 0 0;color:#244b45}
 .wx-foot{margin:6px 0 0;font-size:10.5px;color:#869a90;line-height:1.4}
-/* Keep the map at its normal size: up to ~2240px wide the weather cards stack under their airport cards in the right column;
-   on wider screens the page grows by one card column and the weather cards sit beside their airport cards. */
-@media(min-width:2240px){
- body.has-wx main{max-width:2192px}
+/* Everything keeps its main-branch size; the weather cards are added as an extra column to the right of the
+   origin/destination cards. The page grows by one card column (300px + 12px gap), so below ~2240px it scrolls sideways. */
+@media(min-width:1400px){
+ body.has-wx main{width:calc(min(1880px,100%) + 312px);max-width:none}
+ body.has-wx header{min-width:calc(min(1880px,100%) + 312px)}
  .results.has-wx{grid-template-columns:minmax(0,1fr) 612px}
  .info-rail.has-wx .journey-panels{grid-template-columns:1fr 1fr}
  .info-rail.has-wx .aircraft-position-bar{grid-column:1/-1}
