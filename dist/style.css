@@ -371,3 +371,7 @@ main{max-width:2040px;padding-left:3%;padding-right:3%}
  .info-rail.has-wx .aircraft-position-bar{grid-column:1/-1}
 }
 @media(max-width:1399px){.info-rail.has-wx .aircraft-position-bar{grid-column:1/-1}}
+
+/* Header actions: theme toggle + share */
+.header-actions{display:flex;align-items:center;gap:8px}
+.theme-toggle{width:42px;height:42px;padding:0;display:grid;place-items:center;font-size:17px;line-height:1;flex-shrink:0}

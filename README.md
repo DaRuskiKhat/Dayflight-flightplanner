@@ -12,6 +12,10 @@ Route colours: the unflown SimBrief route is gold dashed; the direct great-circl
 
 SimBrief imports show Origin weather and Destination weather cards. Everything keeps its main-branch size and the weather cards are added as an extra column to the right of the origin/destination cards (screens 1400px and wider). The page grows by one card column (312px), so on screens narrower than about 2240px it scrolls sideways to reach them; below 1400px they pair up under the map. Each card decodes the OFP's METAR (wind, visibility, ceiling, temperature/dew point, QNH) with a VFR/MVFR/IFR/LIFR badge (SimBrief's category, FAA thresholds), and the TAF conditions forecast at off-block (origin) or on-block ETA (destination): prevailing conditions after FM/BECMG changes, plus any TEMPO/PROB spells covering that time. Raw METAR/TAF text is collapsible. Weather is the OFP snapshot at planning time, not live; decoding is in `dist/weather.js` (tests: `check-weather.cjs`). Saved plan files keep the weather; share links leave it out.
 
+## Light and dark mode
+
+The sun/moon button in the header switches between light and dark mode. By default Dayflight follows the system setting; once you switch, the choice is remembered in this browser (`dayflight-theme`). The theme is applied by a small inline script in `<head>` before the page paints, so there is no flash of the wrong theme. Dark colours live in `dist/dark.css`, generated from `style.css` by `tools/make-dark-theme.py` (re-run it after editing `style.css`; hand-tuned tweaks go in `tools/dark-overrides.css`). The map card is already dark and is unchanged; the vertical profile chart picks its frame and label colours from the theme.
+
 ## Hosting
 
 There is no build step and no server code: publish the `dist` folder as-is. SimBrief is called directly from the viewer's browser, so live import works on any static host.

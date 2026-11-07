@@ -34,6 +34,8 @@ $('loadPlan').onclick=()=>$('planFile').click();
 $('planFile').onchange=async()=>{const file=$('planFile').files[0];if(!file)return;try{if(file.size>2*1024*1024)throw Error('Choose a Dayflight plan JSON file under 2 MB.');const state=JSON.parse(await file.text());if(!state||typeof state!=='object'||!['from','to','date','time','duration'].every(k=>typeof state[k]==='string')||!validPlanDate(state.date))throw Error('This is not a valid Dayflight plan file.');restore(state);calculate();if($('error').textContent)throw Error($('error').textContent);toast('Plan loaded.');}catch(err){$('error').textContent=err.message;}finally{$('planFile').value='';}};
 '''+app[end:]
 html=re.sub(r'<link rel="stylesheet" href="style\.css[^\"]*">',lambda _:f'<style>{css}</style>',html)
+dark_css=(dist/'dark.css').read_text(encoding='utf-8')
+html=re.sub(r'<link rel="stylesheet" href="dark\.css[^\"]*">',lambda _:f'<style>{dark_css}</style>',html)
 html=html.replace('<button id="share" class="quiet">↗ Share plan</button>','<div class="offline-actions"><button type="button" id="loadPlan" class="quiet">↑ Load plan</button><button id="share" class="quiet">↓ Save plan</button><input type="file" id="planFile" accept=".json,application/json" hidden></div>')
 html=html.replace('<title>Dayflight · Follow the light</title>','<title>Dayflight Offline · Flight daylight planner</title>').replace('href="./"','href="#"')
 def inline_script(text):
